@@ -1,0 +1,323 @@
+body {
+    background-image: url('img/back.png');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(156, 149, 149, 0.5);
+    border-bottom: 1px solid rgba(156, 149, 149, 0.5);
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    flex-grow: 1;
+}
+#logo img {
+    width: 100px; 
+    height: auto; 
+}
+
+#search-bar {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.star {
+    font-size: 2em;
+    cursor: pointer;
+    color: #ccc;
+    margin: 0 10px;
+}
+
+.star:hover,
+.star:hover ~ .star {
+    color: #ffc107; 
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#review-text {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#review-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000; 
+    color: #fff;
+    cursor: pointer;
+}
+
+#review-form button:hover {
+    background-color: #C0C0C0; 
+    color: #000000; 
+}
+#submission-message {
+    border: 2px solid #000000;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+#search-bar input {
+    width: 200px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    right: 0;
+    top: 0;
+}
+.main-nav {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+nav {
+    width: 100%; 
+    background-image: url('img/background.png');
+    border-radius: 15px; 
+    box-sizing: border-box; 
+    background-color: rgba(3, 3, 3, 0.5); 
+    padding: 10px 20px;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    display: flex;
+    gap: 10px;
+    order: 2;
+}
+
+nav a {
+    position: relative;
+    color: #C0C0C0; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-right: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 2px #000000, 0 0 0 4px #ffffff;
+}
+
+nav a:hover {
+    color: #444040;
+    background-color:rgba(34, 32, 32, 0.4);
+}
+section {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3); 
+    border-radius: 25px; 
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+#novels {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 0;
+}
+
+.novel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.novel:hover {
+    transform: scale(1.05);
+}
+
+.novel img {
+    width: 200px; 
+    object-fit: cover;
+    border-radius: 10px; 
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(156, 149, 149, 0.5); 
+}
+.novel figcaption {
+    width: calc(100% - 220px); 
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 0 0 15px 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.novel:hover figcaption {
+    opacity: 1;
+}
+.section-title {
+    font-family: 'Bellota', sans-serif;
+    font-size: 2em;
+    color: #333;
+    margin: 0 auto; 
+    padding: 10px; 
+    background-color: rgba(156, 149, 149, 0.3); 
+    text-align: center; 
+    width: fit-content; 
+    border-radius: 25px;
+}
+.novel-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: linear-gradient(to bottom, #e6e6e6 0%, #ffffff 100%); 
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.2); 
+}
+
+.novel-button:hover {
+    background: linear-gradient(to bottom, #ffffff 0%, #e6e6e6 100%);
+}
+
+.novel:hover .novel-button {
+    opacity: 1;
+}
+
+#novelCarousel {
+    width: 100%; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.carousel-item {
+    height: 800px; 
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 800px; 
+    object-fit: cover;
+}
+
+#novelCarousel {
+    max-width: 600px; 
+    margin: 0 auto;
+}
+
+
+@media (max-width: 800px) {
+    .carousel-item {
+        height: 200px; 
+    }
+
+    .carousel-item img {
+        height: 200px; 
+    }
+}
+
+#novels, #rating-and-review {
+    display: none;
+}
+#login-form, #signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 4cm;
+    margin: auto;
+}
+
+#login-form input, #signup-form input {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+}
+
+#login-form button, #signup-form button {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+    cursor: pointer;
+}
+#login, #signup {
+    display: none;
+}
+#current-user {
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 10px; 
+    padding: 5px 10px; 
+    color: white; 
+    margin-left: 10px; 
+}
+address {
+    background-color: rgba(156, 149, 149, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    color: #C0C0C0;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+address a {
+    color: #C0C0C0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+address a:hover {
+    color: #444040;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(156, 149, 149, 0.5);
+    border-top: 1px solid rgba(156, 149, 149, 0.5);
+    border-radius: 15px;
+    
+  
+
+}

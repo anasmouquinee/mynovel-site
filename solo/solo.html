@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <title>Solo Leveling</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="stylesheet.css">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Solo Leveling</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home" onclick="showHome()">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#characters" onclick="showCharacters()">Characters</a>
+                </li>
+               
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Chapters
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#chapter1" onclick="showContent('chapter1')">Chapter 1</a>
+                        <a class="dropdown-item" href="#chapter2" onclick="showContent('chapter2')">Chapter 2</a>
+                        <a class="dropdown-item" href="#chapter3" onclick="showContent('chapter3')">Chapter 3</a>
+                    </div>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="#novelArtCarousel" onclick="showNovelArt()">Novel Art</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="content" class="container mt-4">
+        <h3>Select a section or a chapter to display its content.</h3>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            } 
+        }
+
+        function showContent(chapter) {
+            var content = document.getElementById('content');
+            switch(chapter) {
+                case 'chapter1':
+                    content.className = 'content chapter1';
+                    content.innerHTML = `<h3>Chapter 1</h3><p>This is the content of Chapter 1.</p>
+                  <pre> Ten years ago, the "door" connecting the world with other dimensions was opened, and various monsters appeared continuously, so demon hunters with different abilities also appeared, called "hunters".
+
+Cheng Jin-Woo is the weakest E-rank hunter, and he encountered a terrible hidden challenge during a challenge mission. At the time of life and death, he actually obtained an upgrade system! Under the utilization of the system, can he become the strongest hunter?
+
+Chapter 1 Level E Hunter
+
+Class E Hunter - Cheng Jin-Woo.
+
+No matter where you go, this label is always with you.
+
+Cheng Jin-Woo's overall strength is basically the same as that of ordinary people. He's just a little bit stronger and heals a little faster from his wounds, but in other respects, Seong Jin-Woo is exactly the same as an ordinary person.
+
+At the end of each mission, he was injured, and on several occasions he narrowly escaped death.
+
+Of course, Seong Jin-Woo didn't like being a hunter.
+
+The job is dangerous, other people are always making fun of him, and what's worse, the pay is horrible.
+
+If it weren't for the Hunter Association to provide hunters with a certain amount of medical assistance, he would have thrown away his hunter license and resigned long ago, and gone to live the life of an ordinary person.
+
+Unfortunately, for someone like Cheng Xiaoyu, who is around twenty-five years old and lacks practical job skills, if he wants to afford his mother's monthly medical expenses of tens of thousands of yuan, he has no choice but to become a hunter. Other methods.
+
+It should be said that he had no choice in this matter at all.
+
+So on that day, even though Cheng Jin-Woo didn't want to go at all, he still bit the bullet and participated in the team battle supervised and controlled by the association.
+
+***
+
+Hunters basically work in the same area, so they are familiar with each other.
+
+That's why, in this dimensional portal opening event, all hunters in this area are required to come.
+
+The hunters who arrived early in the morning are enjoying the coffee provided by the staff of the association while greeting each other warmly.
+
+"Hey. Old Wang, come here, here."
+
+"Oh? Old Pu, what's the matter? Didn't you say that you don't want to be a hunter?"
+
+"Hey, because... my wife is pregnant with a second child."
+
+"Hahahaha, that's it. For us, if we want to make a lot of money at once, participating in group battles is indeed the best choice, isn't it?"
+
+Wang Jianshe laughed happily. Pu Xingfeng also smiled, and then asked Wang Jianshe.
+
+"Why do I feel that the association has notified us less and less these days? Is it because the number of portal openings has decreased, or are there other reasons?"
+
+"Of course not. It's just that the trade unions have been more active in these matters recently. I heard that the remuneration is good, and those trade unions are scrambling to complete the tasks."
+
+"If that's the case, this group fight is overseen by the Association, so it should be safe, right?"
+
+Park Xingfeng looked around nervously.
+
+If there is no guild participating today, it means that there will not be enough benefits here, and if there are not enough benefits, it means that the difficulty of the portal this time is quite low.
+
+Of course, there are no absolutes in this world.
+
+Not only Pu Xingfeng, but other hunters were also nervously watching the movements around them.
+
+"Who knows..."
+
+Wang Jianshe finished the rest of the coffee and avoided answering his friend's questions. When he saw someone's figure, he waved his hands happily.
+
+"Hi! Xiao Cheng, Xiao Cheng. Come here."
+
+The rest of the hunters also expressed their joy at the young man's arrival.
+
+"Hello everyone."
+
+The person who came was none other than Cheng Jin-Woo.
+
+Cheng JinWoo nodded to Wang Jianshe who was smiling, and walked past him.
+
+After confirming that Cheng Jin-Woo was gone, Wang Jianshe said with a smile, "Here, Cheng Jin-Woo is here. Then today will be fine."
+
+Pu Xingfeng's eyes widened, and he hurriedly asked Wang Jianshe.
+
+"Who is that? Is Cheng Jin-Woo a strong hunter?"
+
+"Ah, I forgot you didn't know him. He didn't start working as a hunter until shortly after you left. But now, he's 'everyone knows, everybody knows'."
+
+"Is he really that strong? Then why does he still work for the guild? Wouldn't it be better to join a large guild or become a free hunter?"
+
+Wang Jianshe smiled, then narrowed his eyes and said, "Do you know what that guy's nickname is?"
+
+"How would I know? Tell me quickly."
+
+"Humanity's Weakest Weapon."
+
+"... the weakest? Are you sure it's not the ultimate weapon?"
+
+"Dude, that's the nickname of Cui Zhongyin, an S-rank hunter. That kid is the 'weakest weapon'. It's not an exaggeration to say that he is the weakest hunter in country H."
+
+"Really?"
+
+Park Xingfeng frowned.
+
+If Seong Jin-Woo is really that weak, why are other hunters still willing to greet him? After all, in a dangerous situation, what people need is a trusted partner.
+
+Park Heung Bong couldn't understand how the other hunters reacted to Cheng Jin Woo.
+
+Seeing Park Xingfeng shaking, Wang Jianshe laughed and touched Park Xingfeng with his arm.
+
+"Can't you figure it out! Cheng Jin-Woo is so weak, the team battles he can participate in are only the lowest difficulty ones. Do you think the association will entrust him with difficult tasks? After all, the association doesn't want to see him killed, yes Bar?"
+
+Hearing this, Pu Xingfeng looked happy.
+
+"you're right."
+
+This was the first team battle he participated in after his comeback, and his wife was very worried. To be honest, even he was worried. But after listening to Wang Jianshe's words, he felt a little more relaxed.
+
+Wang Jianshe continued.
+
+"I heard that not long ago, he was injured in an E-level dungeon crusade, and he was recuperating in the hospital for a week."
+
+"A hunter will be injured in the crusade in the E-level dungeon?"
+
+"That's right. It's because no one thought that a hunter would be injured during the raid on the E-level dungeon, so there were no healers in the team."
+
+"So Jean just lay in the hospital for a week? Poof-hahaha!"
+
+Pu Xingfeng laughed loudly, and Wang Jianshe quickly told him to keep his voice down.
+
+"Keep your voice down, Cheng Jin-Woo might hear you."
+
+"Ah, I forgot."
+
+Park Xingfeng watched Cheng Jin-Woo's reaction carefully, and then continued to giggle.
+
+Luckily, they were only far enough away from Cheng Jin-Woo, so it was impossible for Cheng Jin-Woo to hear what they were saying.
+
+However, they underestimated Seong Jin-Woo's hearing ability.
+
+‘You uncles, I heard all of you. '
+
+Cheng Jin-Woo smiled bitterly, trying his best to ignore their words. Whenever this happened, he would complain about his overly sensitive hearing.
+
+He came a little early, and the team battle hadn't started yet.
+
+'Did I come too early? '
+
+While waiting, Cheng Jin-Woo looked around and saw the staff of the association distributing hot coffee, so he walked over.
+
+"Can I have a cup of coffee?"
+
+"Ah, Hunter Seong Jin-Woo...I'm so sorry, but the coffee just finished."
+
+"..."
+
+The cold winter wind blew past the tip of his nose.
+
+Cheng Jin-Woo rubbed his nose silently with his index finger.
+
+What an unlucky day, why the coffee had just run out when it was his turn.
+
+***
+
+"Sung Jin-Woo, why do you insist on being a hunter?"
+
+"sorry."
+
+Cheng Jin-Woo lowered his head.
+
+A young and beautiful girl is using magic to heal Cheng Jin-Woo, she is Xiao Xi. Her pouted mouth expressed her inner dissatisfaction at this moment.
+
+"I don't want your apology, do you understand? I'm just worried about you. If you continue to fight like this, sooner or later you will face a more dangerous situation."
+
+Cheng Jin-Woo looked over Xiaoxi's shoulder to look at the combat-type hunters over there.
+
+When the hunter enters the portal, he will arrive at a place called 'Dungeon'. This time the dungeon is about D rank.
+
+The dozen or so hunters could clean up the monsters in this dungeon without any effort.
+
+But for an E-level hunter, this is impossible.
+
+Normally, work as a healer for wounded hunters in the rear. But because Seong Jin Woo is always injured in team battles, he is quite famous among healers.
+
+Xiaoxi asked cautiously.
+
+"Is there a reason why you didn't give up being a hunter?"
+
+Cheng Jin-Woo shook his head firmly.
+
+He doesn't want to reveal his private affairs to others.
+
+"I'm just a hunter for fun. If I don't do this, I might be bored to death."
+
+Xiaoxi pouted even higher.
+
+"If you continue like this, you will soon be able to fight team battles in another world, do you really not know?"
+
+Hearing Xiao Xi's words, Cheng Jin-Woo laughed out loud.
+
+Xiaoxi quickly stopped him and said,
+
+"Ah! You can't laugh anymore! You can't! Your wound is about to open!"
+
+Cheng Jin-Woo kept smiling, and asked her, "Where did you learn to speak like this?"
+
+"Where else could it be? Over there - I learned it from Uncle Wang Jianshe."
+
+"Hey, that old man is really..."
+
+While they were talking and laughing, Seong Jin-Woo's treatment also ended.
+
+Cheng Jin-Woo's expression was a little stiff.
+
+'Today, I only killed one monster. '
+
+It's still an E-rank monster.
+
+Caressing the E-rank monster spar in his hand, Cheng Jin-Woo began to feel anxious.
+
+The lowest-level Warcraft spar of E-level Warcraft can't even reach 600 yuan. It's not worth risking your life for so little money.
+
+'However, a C-grade spar can be sold for 60,000 yuan. '
+
+But for an E-level hunter like him, hunting down C-level monsters is simply impossible.
+
+Suddenly, someone shouted,
+
+"Hello!? Look, there is another entrance here."
+
+The nearby hunters surrounded him.
+
+"Hey, there is really another entrance."
+
+As the hunter who yelled at the beginning said, there is another entrance hidden in this dungeon.
+
+Song Zhiguo, a hunter with more than ten years of experience, was also very surprised to see the hidden entrance of the dungeon.
+
+"Double dungeon...I didn't expect this thing to actually exist..."</pre>`;break
+                    case 'chapter2':
+                    content.className = 'content chapter2';
+                    content.innerHTML = `<h3>Chapter 2</h3><p>This is the content of Chapter 2.</p>
+                  <pre>The hidden entrance looks like a cave, but the darkness in the depths seems to swallow everything up, and nothing can be seen. Song Zhiguo activated his ability, raised a ball of flame and threw it into the path leading to the deep place.
+
+Flames flew forward, illuminating the interior of the entrance. The entrance stretches forward continuously, seemingly endlessly. After a while, the flame stopped moving forward, fell to the ground and died out shortly after.
+
+The entrance was once again swallowed by darkness.
+
+"Hmm... everyone, gather here. Let's discuss it."
+
+Song Zhiguo, the person in charge of this group battle, asked the hunters to gather at the hidden entrance. Meanwhile, Seong Jin-Woo's treatment just ended, so he and Hyo-hee also joined the discussion.
+
+Song Zhiguo glanced at the hunters around him and began to speak.
+
+"As we all know, until the boss of the dungeon is not killed, the portal will always be open. Now, we have cleared all the monsters, and the portal is still not closed, which means that the final boss is not here."
+
+Song Zhiguo pointed to the hidden entrance.
+
+The hunters present exchanged glances silently.
+
+No one disputes this point of view.
+
+Song Zhiguo continued.
+
+"In principle, we should feed the information back to the association and wait for orders, but... if we do that, we may have to hand over the credit for killing the final boss to other hunters. In that case, we may get The rewards are less and less.”
+
+The hunters present frowned upon hearing this.
+
+Especially Park Xingfeng, his expression became stiff. He really needs more money to support his pregnant wife and children.
+
+'Postpartum care is expensive now...'
+
+If so, it wouldn't make any sense for him to risk his life in this team fight.
+
+"So I am more inclined to kill the final boss together before leaving the dungeon... What do you think?"
+
+The hunters fell silent.
+
+"..."
+
+"..."
+
+Now no one knows the situation of the hidden entrance, so they cannot guarantee their own safety.
+
+But this time the difficulty of the dungeon is very low. Therefore, the difficulty of the hidden dungeon should not be very high.
+
+"Cough, cough."
+
+Song Zhiguo cleared his throat to draw everyone's attention back.
+
+"We've got seventeen here. So, let's vote, how about? Once a decision is made, no one can disagree. Is that okay?"
+
+After hearing Song Zhiguo's suggestion, everyone nodded, and no one objected.
+
+"I voted yes."
+
+Song Zhiguo raised his hand.
+
+Then, the hunters who were still looking at others raised their hands one by one.
+
+"me too."
+
+"Count me in too."
+
+The first person to raise his hand was Pu Xingfeng, followed by Wang Jianshe and other hunters.
+
+Of course, many people voted against it.
+
+"It's better not to go."
+
+"I think it would be better to wait for the association's decision."
+
+When it came time for Cheng Jin-Woo and Xiao Xi to vote, the votes of both sides were evenly matched.
+
+"Feel sorry......"
+
+Xiaoxi bowed to Song Zhiguo, and then joined the 'don't go' camp.
+
+Now, the number of votes to go and not to go is 8:8.
+
+draw.
+
+Song Zhiguo looked at Cheng Jinwoo who was still hesitating, and asked.
+
+"Xiao Cheng, what about you?"
+
+Chapter 2 Double Dungeon
+
+Now, everything will depend on Seong Jin-Woo's answer.
+
+Cheng Jinyu tightly held the E-grade spar in his hand, and glanced at Xiaoxi beside him.
+
+Xiaoxi shook her head at him.
+
+She looked very worried.
+
+In fact, Cheng Jin-Woo is also the same. Normally, he would never take the risk of doing something dangerous. It's not just that his strength doesn't allow it, he doesn't have enough courage himself.
+
+However, Seong Jin-Woo also has a younger sister who is going to college soon.
+
+'I have no savings...'
+
+Cheng Jin-Woo is twenty-four years old.
+
+He was supposed to enjoy a good college life on campus, but he had to give up because he had no money. He didn't want his sister to repeat his mistakes.
+
+Right now, he really needs money.
+
+Pu Xingfeng was not the only one who urgently needed a large sum of money.
+
+Cheng Jin-Woo raised his hand.
+
+"I'll go as well."
+
+Just as he finished speaking, he heard a helpless sigh from the side.
+
+The path stretches toward the unknown infinity.
+
+Song Zhiguo and several stronger hunters were exploring the way ahead. Song Zhiguo raised a cluster of flames in his palm, illuminating the road ahead.
+
+Wang Jianshe walked beside Song Zhiguo and asked, "Have we gone too far? I think we should also consider any retreat."
+
+"How long have we been walking?"
+
+Wang Jianshe glanced at his watch.
+
+"Should have been walking for forty minutes."
+
+"The portal will completely close an hour after the boss is killed, so we should have another 20 minutes."
+
+"Then if we still can't find the BOSS in the next twenty minutes, let's retreat."
+
+"That's the only way to go."
+
+Song Zhiguo nodded in agreement, and then pointed behind him.
+
+"Old Wang, it's dark in front, you can walk behind me."
+
+Wang Jianshe stared at Song Zhiguo's flame for a few seconds, then took out the hunter's special mobile phone from his pocket, and turned on the flashlight.
+
+Then, the road ahead brightened like daylight.
+
+"..."
+
+Song Zhiguo looked at the flame in his hand, then at Wang Jianshe's cell phone, and began to search his pocket silently.
+
+***
+
+Cheng Jin-Woo, who was seriously injured, and Xiao Xi, who had no combat experience, walked at the end of the team.
+
+Cheng Jin-Woo scratched his neck.
+
+"Well, I... apologize to you."
+
+"What's wrong?"
+
+"That's right, that's the one that just dragged you in."
+
+"It's okay, you don't need to apologize to me."
+
+Cheng Jin-Woo carefully looked at Xiaoxi's expression.
+
+It doesn't look like it's okay at all!
+
+Cheng Jinyu tilted his head to observe Xiaoxi's face, and asked cautiously.
+
+"Are you...really not angry?"
+
+Xiao Xi finally turned her attention to Cheng Jin-Woo.
+
+"How can you not be angry. Are you still in your head? If the stab wound was a few inches higher, you would have an extra hole in your heart. And your arms and legs are full of wounds. I spent It takes so much effort to heal you, but you rush to another dungeon! And you don't even know what kind of place it is!"
+
+Facing her barrage of questions, Cheng Jin-Woo was speechless.
+
+But, she was right.
+
+Thanks to Xiaoxi, Seong Jin-Woo can continue to live. Without her timely treatment, Cheng Jin-Woo's life may be difficult to take care of himself, let alone do the work of a hunter.
+
+'Thinking of it this way, don't I owe Xiaoxi a lot of favors? '
+
+Whenever the portal is opened, the association will always entrust Xiaoxi to heal the injured hunter. Moreover, every time Cheng Jin-Woo participates in a team battle, he will receive treatment from Xiaoxi.
+
+"It hurts, right? Bear with it a little longer."
+
+"Have we met... before? Is that...?"
+
+"Are you injured again?"
+
+"We see each other often."
+
+"Your name is Cheng Jin-Woo? Um... are you okay?"
+
+"Perhaps you are not suitable to be a hunter..."
+
+"You're here again..."
+
+"Let me see your arm. Not this one, just put a Band-Aid on this one. I'm talking about the broken one."
+
+Recalling these, Cheng Jin-Woo felt very guilty.
+
+"..."
+
+Seeing that Cheng Jin-Woo became a little depressed, Xiaoxi felt a little regretful, and felt that she shouldn't have reprimanded him like that recently, so she slowed down her tone.
+
+"You really know you're wrong?"
+
+"I really know."
+
+Xiaoxi thought for a while, then raised her eyes to look at Cheng Jin-Woo, and slowly opened her mouth.
+
+"If you feel sorry, then... buy me dinner."
+
+What an unexpected request.
+
+Cheng Jin-Woo looked at her in surprise, and found that she was smiling mischievously like a little girl.
+
+'Little girl...'
+
+But Xiaoxi was indeed a young girl who had just turned twenty.
+
+She said that she will be 21 years old next year, right?
+
+If she cut her hair short and put on a school uniform, she would look like a youthful and sunny female high school student.</pre>`;
+                  break;
+                    case 'chapter3':
+                    content.className = 'content chapter3';
+                    content.innerHTML = `<h3>Chapter 3</h3><p>This is the content of Chapter 3.</p> 
+    <pre>Seong Jin-Woo's cheeks became hot as Xiaoxi's appearance in school uniform came to mind.
+
+Before Cheng Jin-Woo could reply, Xiaoxi puffed up her cheeks angrily.
+
+"What...? Don't you want to have dinner with me?"
+
+As soon as the voice fell, there was a sudden commotion in front of the team.
+
+"We found it!"
+
+"This is where the boss is!"
+
+Cheng Jinyu and Xiaoxi also subconsciously turned their heads to look forward.
+
+A huge door blocked their way.
+
+The hunters immediately surrounded him.
+
+"Why is there a door at the end of the cave?"
+
+"Have we met before?"
+
+"Will this... be dangerous?"
+
+The hunters talked in surprise and fear.
+
+They were uneasy. After all, this is a matter related to their wealth and life, so they have to be careful, more careful.
+
+However, once people are overly cautious, they are likely to lose the golden opportunity.
+
+Song Zhiguo estimated that this was the case now.
+
+"We came here with great difficulty, are you going to return empty-handed?"
+
+Song Zhiguo put his hand on the door.
+
+"If you guys want to give up, go ahead. Even if it's just me, I'm going to keep going."
+
+Song Zhiguo is a C-level hunter with ten years of experience.
+
+If it weren't for his age, with his rich experience and skills, he could definitely enter a large guild.
+
+Seeing Song Zhiguo's firm and confident attitude, the uneasiness of others also eased a lot.
+
+"anyway......"
+
+Some hunters recall rumors of double dungeons.
+
+"I heard that there are countless treasures hidden in the double dungeon."
+
+"Yes, I heard that once a small guild discovered a double dungeon, it became a large guild overnight."
+
+"Since they are all monsters in the same dungeon, no matter where they are, there will not be too much difference in level, so it shouldn't be too difficult to hunt this boss..."
+
+What if, as the rumors say, there are countless treasures in the double dungeon, and the monsters behind the door are only D or E rank?
+
+'I can't let that old man swallow all the treasures alone. '
+
+'Damn it, no way. '
+
+‘The wife’s postpartum care center, the older son’s school fees, and this month’s rent…’
+
+The hunters finally agreed.
+
+Seong Jin-Woo also made a decision.
+
+'I can't go back with just one E-grade spar. At least one D-level monster must be killed, and at the worst, one more E-level monster should be caught. '
+
+It doesn't have to be Warcraft either.
+
+'If it's a treasure...'
+
+The treasures or loot obtained in the dungeon are usually shared equally among all members participating in the team battle.
+
+The spar of Warcraft can only be obtained by hunters.
+
+‘If you can do something big today, then the situation at home can be temporarily improved a lot. '
+
+Cheng Jin-Woo swallowed nervously.
+
+Xiaoxi looked at his firm expression and asked.
+
+"Will a person who treats hunters as a hobby have such an expression?"
+
+Cheng Jin-Woo shrugged.
+
+"Nowadays, who would risk his life at work? But if it's for personal hobby, it's not sure."
+
+"......Ok?"
+
+Xiaoxi was speechless.
+
+At this moment, Song Zhiguo began to forcefully push the door open.
+
+"Uh huh!"
+
+I don't know what mechanism is installed on the huge stone gate, but it can be easily pushed open by an old man.
+
+boom!
+
+The door was fully opened, allowing a view of the interior.
+
+The hunters scrambled to rush in.
+
+"Let's go in too."
+
+Cheng Jin-Woo was worried that he would fall behind others, so he grabbed Xiaoxi's hand and walked forward.
+
+"what......"
+
+Xiaoxi blushed slightly, and followed behind Cheng Jin-Woo.
+
+***
+
+As soon as the hunters entered the door, the torches hanging on the wall automatically ignited the flames.
+
+The door became extremely bright.
+
+"What the hell? The torch started to burn by itself?"
+
+"This is the first time I've seen a dungeon like this."
+
+"Something feels... not quite right."
+
+Hunters carefully observe the surrounding environment.
+
+The space inside the door is like an ancient temple.
+
+Buried as if buried for ages, it was a dark and dank temple; moss and weeds spread like fur moss on the floors, walls and ceiling.
+
+Seeing this, several hunters retreated immediately, their bodies trembling slightly.
+
+"Don't you think it's a bit weird here?"
+
+"There is always a feeling of being stared at by something!"
+
+Three or four powerful hunters continued to move forward regardless of the frightened people behind the team.
+
+"Tsk! Don't say those depressing words, understand?"
+
+"Let's have a quick fight and then go home."
+
+The space inside the door is unusually wide.
+
+Huge domes hang over people's heads.
+
+The space here is about as large as several Capital Olympus stadiums put together, maybe even bigger than that.
+
+However, it inexplicably gives people a sense of suffocation.
+
+The reason is very obvious.
+
+"That... that is..."
+
+"Wouldn't that **** thing be the BOSS?"
+
+In the deepest part of the place, a colossus beyond imagination sat on a throne as large as itself.
+
+The colossus is nothing but a giant stone god!
+
+"My goodness!"
+
+"Wow!"
+
+The hunters couldn't help being amazed.
+
+The first thing that popped into Cheng Jin-Woo's mind was the Statue of Liberty in New York. If the statue of the goddess is sitting on a chair, will it be the same size?
+
+However, the Statue of Liberty is a female statue, and here is a male statue.
+
+'This idol may be bigger...'
+
+In front of the statue, the hunters swallowed nervously. I'm afraid this huge statue is the ultimate boss in this dungeon.
+
+'...'
+
+Fortunately, the idol remained motionless.
+
+"Hoooo..."
+
+Even Song Zhiguo let out a long sigh of relief.
+
+"Okay, everyone, let's go."
+
+The relieved hunters dispersed and began to search nearby.
+
+"It seems that there are no monsters here?"
+
+"I think so."
+
+"Don't talk about Warcraft, I haven't even seen a bug."
+
+Although the space where the statue is located is large, the internal structure is very simple. There are countless torches hanging on the wall; beside the wall, there are many stone statues slightly taller than people standing quietly.
+
+"It's so beautiful!"
+
+"Like a work of art!"
+
+The stone statues standing by the wall are of different shapes.
+
+Each stone statue holds a different object. Some hold weapons, some books, some musical instruments, and some even hold torches.
+
+"It's like..."
+
+"Looks like a statue in a holy temple."
+
+Song Zhiguo was the first to say what Wang Jianshe wanted to say.
+
+Song Zhiguo looked at his feet, as if he had discovered something.
+
+"Huh? This...is it a magic circle?"
+
+In the center of the temple is a magic circle that has never been seen before.
+
+at that time.
+
+"Uncle Zhiguo! There seems to be something written here. Come and take a look!"
+
+A hunter shouted when he found a distinctive stone statue in a corner.
+
+Song Zhiguo, who was observing the magic circle, stood up and walked towards the stone statue.
+
+The other hunters also gathered around the stone statue.
+
+What makes this stone statue different is that it has a pair of wings and a stone slab in its hand.
+
+The inscriptions carved on this slab attracted the attention of hunters.
+
+Song Zhiguo glanced at the stone slab and said to himself.
+
+"It's a rune."
+
+Runes.
+
+This kind of writing does not exist on the earth, and is unique to the world of the dungeon. And only hunters who have awakened their magical abilities can understand this kind of writing.
+
+"Laws of the Cathenon."
+</pre>`;
+    break;
+                default:
+                    content.className = 'content';
+                    content.innerHTML = '<h3>Select a chapter to display its content.</h3>';
+            }
+        }
+
+        function showHome() {
+    var content = document.getElementById('content');
+    content.className = 'content';
+    content.innerHTML = `
+        <h3>Home</h3>
+        <div class="home-content">
+            <div class="teaser">
+                <video src="img/teaser_video.mp4" controls></video>
+                <p style="color: black;">This is a teaser video for Solo Leveling. Watch it to get a glimpse of the story!</p>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+             <ol class="carousel-indicators">
+         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/cover1.jpg" class="d-block w-100" alt="Home Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/cover2.jpg" class="d-block w-100" alt="Home Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/cover3.jpg" class="d-block w-100" alt="Home Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/cover4.jpg" class="d-block w-100" alt="Home Image 2">
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+            <div id="solo-details">
+        <h2>Solo Leveling</h2>
+        <p><strong>Title:</strong> Solo Leveling</p>
+        <p><strong>Genre:</strong> Action, Adventure, Fantasy</p>
+        <p><strong>Status:</strong> Ongoing</p>
+        <p><strong>Author:</strong> Chu-Gong</p>
+    </div>
+        <pre id="summary1" style="text-align: center; font-family: Arial, sans-serif; font-size: 20px; color: #EAECEC">
+            This novel is also known as Only I Level Up
+
+10 years ago, after “the Gate” that connected the real world with the monster world opened, some of the ordinary, everyday people received the power to hunt monsters within the Gate. They are known as “Hunters”.
+
+However, not all Hunters are powerful. My name is Sung Jin-Woo, an E-rank Hunter. I’m someone who has to risk his life in the lowliest of catacombs, the “World’s Weakest”.
+
+Having no skills whatsoever to display, I barely earned the required money by fighting in low-leveled catacombs… at least until I found a hidden catacomb with the hardest difficulty within the D-rank catacombs!
+
+In the end, as I was accepting death, I suddenly received a strange power, a quest log that only I could see, a secret to leveling up that only I know about! If I trained in accordance with my quests and hunted monsters, my level would rise.
+
+Changing from the weakest Hunter to the strongest S-rank Hunter!
+</pre>
+    `;
+}
+        function showCharacters() {
+            var content = document.getElementById('content');
+            content.className = 'content';
+            content.innerHTML = `
+                <h3>Characters</h3>
+                <div class="character-content">
+                    <div>
+                        <img src="img/SungJinwoo.jpg" alt="Character Image 1">
+                        <p style="color: #EAECEC;">Sung Jinwoo (성진우, Seong Jin-Wu) is the main protagonist of Solo Leveling. He is the strongest hunter in the world and the second Shadow Monarch, having inherited the position from his predecessor Ashborn.</p>
+                    </div>
+                    <div>
+                        <img src="img/ChaHae-In.jpg" alt="Character Image 2">
+                        <p style="color: #EAECEC;">Cha Hae-In (차해인) is a Korean S-Rank Hunter and the Vice-Guild Master of the Hunters Guild. She is also the wife of Sung Jinwoo and the mother of their son Sung Suho.</p>
+                    </div>
+                    <div>
+                        <img src="img/SungSuho.jpg" alt="Character Image 3">
+                        <p style="color: #EAECEC;">Sung Suho is the son of the Sung Jinwoo and Cha Hae-In. He is also the main protagonist of Solo Leveling: Ragnarok.</p>
+                </div>
+                <div>
+                        <img src="img/SungIlHwan.png" alt="Character Image 3">
+                        <p style="color: #EAECEC;">Sung Il-Hwan (성일환) was a Korean S-Rank Hunter and the father of Jinwoo and Jinah.</p>
+                </div>
+                <div>
+                        <img src="img/SungJinah.jpg" alt="Character Image 3">
+                        <p style="color: #EAECEC;">Sung Jinah (성진아) is a high school student and Jinwoo's younger sister.</p>
+                </div>
+                </div>
+            `;
+        }
+        
+        function showNovelArt() {
+        var content = document.getElementById('content');
+        content.className = 'content';
+        content.innerHTML = `
+            <h3>Novel Art</h3>
+            <div id="novelArtGrid">
+                <img src="img/novel1.jpg" alt="In this place my fight started." onclick="openModal(this)">
+                <img src="img/novel2.jpg" alt="And here my fight will end" onclick="openModal(this)">
+                <img src="img/novel3.jpg" alt="Again, i lost some of my humanity" onclick="openModal(this)">
+                <img src="img/novel4.jpg" alt="“In this moment i knew i was screwed”" onclick="openModal(this)">
+                <img src="img/novel5.jpg" alt="“Pure chaos”" onclick="openModal(this)">
+                <img src="img/novel6.jpg" alt="“The right hand of the shadow monarch”" onclick="openModal(this)">
+                <img src="img/novel7.jpg" alt="The shadow monarch" onclick="openModal(this)">
+                <img src="img/novel8.png" alt="The left hand of the shadow monarch" onclick="openModal(this)">
+                <img src="img/novel9.jpg" alt="“The sword of the shadow monarch”" onclick="openModal(this)">
+                <img src="img/novel10.jpg" alt="“The death itself”" onclick="openModal(this)">
+            </div>
+            <div id="myModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+        `;
+    }
+
+        function openModal(imgElement) {
+        var modal = document.getElementById('myModal');
+        var modalImg = document.getElementById('img01');
+        var captionText = document.getElementById('caption');
+
+        modal.style.display = "block";
+        modalImg.src = imgElement.src;
+        captionText.innerHTML = imgElement.alt;
+    }
+
+        function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    </script>
+</body>
+</html>
+

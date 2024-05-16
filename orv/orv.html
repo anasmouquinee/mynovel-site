@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <title>Omniscient Reader's Viewpoint</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="stylesheet.css">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Omniscient Reader's Viewpoint</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home" onclick="showHome()">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#characters" onclick="showCharacters()">Characters</a>
+                </li>
+               
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Chapters
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#chapter1" onclick="showContent('chapter1')">Chapter 1</a>
+                        <a class="dropdown-item" href="#chapter2" onclick="showContent('chapter2')">Chapter 2</a>
+                        <a class="dropdown-item" href="#chapter3" onclick="showContent('chapter3')">Chapter 3</a>
+                    </div>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="#novelArtCarousel" onclick="showNovelArt()">Novel Art</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="content" class="container mt-4">
+        <h3>Select a section or a chapter to display its content.</h3>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            } 
+        }
+
+        function showContent(chapter) {
+            var content = document.getElementById('content');
+            switch(chapter) {
+                case 'chapter1':
+                    content.className = 'content chapter1';
+                    content.innerHTML = `<h3>Chapter 1</h3><p>This is the content of Chapter 1.</p>
+                  <pre>– STORY –
+Only I know the end of this world.
+[There are three ways to survive in a ruined world. Now, I have
+forgotten a few, but one thing is certain. The fact that you who are
+reading this now will survive.
+-Three ways to survive in a ruined world]
+A web novel platform filled the screen of my old smartphone. I
+scrolled down and then up again. How many times have I been doing
+this?
+“Really? This is the end?”
+I looked again, and the ‘complete’ was unmistakable.
+The story was over.
++
+[Three Ways to Survive in a Ruined World]
+Author: tls123
+3,149 chapters.
++
+‘Three Ways to Survive in a Ruined World’ was a feature-length
+fantasy novel with 3,149 chapters. Its shortened name was ‘Ways of
+Survival.’
+I have been steadily reading this novel since the third year of middle
+school.
+During the time when I was bullied by iljins, when I ruined my
+entrance examinations and had to enter a local university, when the
+damned random draw went wrong and I was placed in the military
+unit at the forefront, when I repeatedly switched jobs and am now
+working as a contractor for an affiliate of a large company… Damn,
+let’s stop talking about this.
+Anyway…
+{Author’s words: Thank you so much for reading ‘Ways of Survival’ up
+to here. I will come back to you with an epilogue!]
+“Ah… The epilogue still remains. Then the next chapter is really the
+last one.”
+From the end of childhood to adulthood, it had been done over a huge
+period of 10
+years. There was a mixture of despondency that a world was coming
+to an end along with a sense of satisfaction.
+I opened the comment box of the last message and rewrote the
+sentence several times.
+-Kim Dokja: Writer, thank you for everything in the meantime. I am
+looking forward to the epilogue.
+They were sincere sentences. Ways of Survival was my life’s novel. It
+wasn’t the most popular, but it was the best novel for me.
+There were many words I wanted to say but I couldn’t write them. I
+was afraid that my careless words would hurt the writer.
+-An average of 1.9 hits per chapter.
+-An average of 1.08 comments.
+This was the average popularity index of ‘Ways of Survival.’
+The number of views for the first chapter was 1,2000, but it fell to
+120 for the 10th chapter, and then 12 for the 50th chapter. By the
+time it was the 100th chapter, it was only 1.
+Hits= 1.
+I was overwhelmed by the feeling I got when I saw the numerous ‘1’
+that appeared next to the list of chapters. In some cases, there was a
+‘2’, but it was likely someone pressing the wrong button.
+‘Thank you.’
+The author published a novel with more than 3,000 chapters with just
+1 hit per chapter over a period of 10 years. It was truly a story just for
+me.
+I pressed on the ‘Recommendation Board’ and immediately started
+tapping on the keyboard, -I am recommending a honey jam novel.
+The author wrote me a free completed novel, so I should give him a
+recommendation.
+I clicked on the completed button, and comments quickly appeared.
+– It looks like a new anti. I searched for this person’s ID, and they
+recommended the same novel several times.
+– Isn’t his recommendation banned? The author shouldn’t do this here.
+It occurred to me that I had written a recommendation several months
+ago. In an instant, there were dozens of comments for investigation by
+‘spectators’. My face flushed with embarrassment.
+I was sure that the author would read this. So, I hurriedly tried to
+delete the message, but it was already reported that the message
+couldn’t be removed.
+“This…”
+It was upsetting to think that the recommendation written with all my
+sincerity turned out like this.
+If they even looked a little bit, why didn’t anyone try reading the
+interesting novel? I wanted to give a donation to the writer, but I
+couldn’t afford it because I was a salary worker barely able to make a
+living.
+Then I received a notification that a ‘message has arrived.’
+-tls123: Thank you.
+A message flew in from out of nowhere. It took me a while to grasp
+the situation.
+-Kim Dokja: The author?
+tls123—it was the author of ‘Ways of Survival.’
+-tls123: I was able to complete it to the end thanks to you. I also won
+the competition.
+I couldn’t believe it.
+Ways of Survival won a competition?
+-Kim Dokja: Congratulations! What is the competition?
+-tls123: You won’t know it because it is an unknown competition.
+I wondered if he lied because he was ashamed, but I wanted it to be
+true. Perhaps I really didn’t know. It might be a bit hit on other
+platforms. I was a little sad, but it was good to have an excellent story
+spreading.
+-tls123: I would like to send a special gift to you as a thank you.
+-Kim Dokja: Gift?
+-tls123: It is thanks to my dear reader that this story has come into the
+world.
+I gave the writer my email address as he asked.
+-tls123: Ah, right. I got the monetization schedule.
+-Kim Dokja: Wow, really? When will it start? This masterpiece should’ve
+been paid from the beginning…
+It was a lie. The Ways of Survival was a daily series, so I would’ve had
+to spend 3,000
+won a month. 3,000 won was one convenience-store lunch for me.
+-tls123: The monetization starts tomorrow.
+-Kim Dokja: Then the epilogue coming tomorrow will be paid?
+-tls123: Yes, I’m afraid you need to pay for it.
+-Kim Dokja: Of course, I have to pay! I will buy the last one!
+There was no reply from the author afterward. I logged out of the site.
+Then I felt the pessimism sink in later.
+The author left without a reply after he succeeded…? My admiration
+turned into petty jealousy. What was I so excited for? In any case, it
+wasn’t my novel.
+“Will he give a gift certificate? It would be good if it’s for 50,000
+won.”
+At that time, I was thinking naively. I didn’t know anything about
+what would happen to the world the next day</pre>`;break
+                    case 'chapter2':
+                    content.className = 'content chapter2';
+                    content.innerHTML = `<h3>Chapter 2</h3><p>This is the content of Chapter 2.</p>
+                  <pre>“I’m Dokja.” (Dokja= can mean only son or reader).
+I usually introduced myself to people like this, then the following
+misunderstanding would occur.
+“Oh, are you an only child?”
+“I am, but that isn’t what I mean.”
+“Huh? Then?”
+“My name is Dokja. Kim Dokja.”
+Kim Dokja (Kim Highly Respected Only Son)—my father gave me that
+name to be a strong man by myself. However, thanks to the name my
+father gave me, I turned out to be just a normal single and lonely man.
+In short, it was like this. I was Kim Dokja, 28 years old, and single. My
+hobby was reading web novels on the subway.
+“Then I’ll go on my smartphone.”
+In a noisy subway, I raised my head reflexively. A pair of curious eyes
+were staring straight at me. They belonged to an employee from the
+human resources team, Yoo Sangah.
+“Ah, hello.”
+“Are you going home from work?”
+“Yes. What about Yoo Sangah-ssi?”
+“I was lucky. The manager went on a business trip today.” Yoo Sangah
+sat down soon
+as the seat next to me became vacant. A subtle scent came from her
+shoulders, making me nervous.
+“Do you normally take the subway?”
+“That…” Yoo Sangah made a dark expression.
+Come to think of it, this was the first time I’d met Yoo Sangah on a
+subway train.
+Starting with Personnel Manager Kang to Finance Manager Han…
+There were rumors that Yoo Sangah had men from the company
+driving her home every workday.
+Yet unexpected words came from Yoo Sangah’s mouth, “Someone
+stole my bicycle.”
+Bicycle.
+“You commute by bike?”
+“Yes! I have a lot of overtime these days and seem to be lacking
+exercise. It is a bit annoying, but it is worth doing.”
+“Aha, I see.”
+Yoo Sangah smiled. Looking closer at her, I could understand the
+feelings men held toward her. However, it was none of my business.
+Every person had a genre of life, and Yoo Sangah was someone who
+lived a genre different from myself.
+After the awkward conversation, we looked at our phones. I opened
+up the novel app I was reading on before while Yoo Sangah… What
+was this?
+“Por favor dinero.”
+“Huh? ”
+“Spanish.”
+“…I see. What does it mean?”
+“Please give me some money,” Yoo Sangah replied proudly.
+Studying on the subway while going home… She truly had a genre
+different from me.
+However, what was the use of memorizing words?
+“You’re working hard.”
+“By the way, what is Dokja-ssi looking at?”
+“Ah, I…”
+Yoo Sangah’s gaze was fixed on the LCD screen of my smartphone. “Is
+it a novel?”
+“Yes, well… I am studying Korean.”
+“Wow, I also like novels. I haven’t been able to read lately because I
+don’t have time…”
+It was surprising. Yoo Sangah liked reading novels…?
+“Murakami Haruki, Raymond Carver, Han Kang…”
+I thought so.
+“Dokja-ssi, what writers do you like?”
+“You won’t know even if I say their names.”
+“I’ve read a lot of novels. Who are the authors?”
+At this time, it was really hard to say that I read web novels as a
+hobby. I glanced at the title of the novel in the app.
+[The World after the Fall]
+Author: Sing Shangshong (TL: The author uses the name of his previous
+novel and his author name, but with slight changes. I decided to go with the
+actual novel translation name)
+I couldn’t say that I was reading ‘The World after the Fall by Sing
+Shangshong.’
+“It is just a fantasy novel. That… Well, like the Lord of the Rings…”
+Yoo Sangah’s eyes widened. “Aha. Lord of the Rings. I’ve seen the
+movie.”
+“The movie is good.”
+The silence continued for a moment. Yoo Sangah was looking at me
+like she was waiting for me to say something.
+Our conversation was becoming strained. So, I decided to change the
+topic. “It has been a year since I joined the company. This is my last
+year. Time moves really fast.”
+“Yes. At that time, we both knew nothing, right?”
+“That’s right. It seems like just yesterday, but the contract period is
+already over.” I realized that I’d said something wrong when I saw
+Yoo Sangah’s expression.
+“Ah, I…” I had forgotten.
+Yoo Sangah received credit for a foreign buyer last month and was
+already promoted to a full-time employee.
+“Ah, right. My congratulations are late. I’m sorry. Haha, I should’ve
+worked hard to study a foreign language.”
+“Ah, no Dokja-ssi! There is still the performance review and…”
+I hated to admit it, but the sight of Yoo Sangah talking was wonderful.
+It was like the world’s spotlight was shining down on only one person.
+If this world was a novel, the protagonist would be such a person.
+In fact, it was the inevitable result. I hadn’t tried, but Yoo Sangah
+made an effort. I just read novels on the Internet, while Yoo Sangah
+studied hard. It was natural that Yoo Sangah would become a full-time
+employee, and that my contract would be terminated.
+“That… Dokja-ssi.”
+“Yes.”
+“If you don’t mind… Would you like to know the app I use?” Yoo
+Sangah’s voice momentarily became distant.
+It felt like the world was far away. I braced my mind and stared
+straight ahead.
+A boy was sitting in the seat opposite me on the train. He was 10
+years old or so. The boy held an insect collecting net as he sat next to
+his mother, laughing happily.
+“…Dokja-ssi?”
+What if I had a different life from now? I mean, what if my life genre
+was different?
+“Kim Dok…”
+If the genre of my life wasn’t ‘realism’ but ‘fantasy’…Could I be the
+protagonist? I didn’t know. It would probably be unknown forever.
+However, there was one thing I knew.
+“It is okay, Yoo Sangah-ssi.”
+“Huh? ”
+“It won’t work even if you tell me the app.”
+The genre of my life was obviously ‘realism.’
+“Dokja has a solo life.”
+“Huh? What…”
+“I am just someone like that.”
+In this genre, I wasn’t a protagonist but a ‘solo’ person.
+“The life of a solo…” Yoo Sangah had a serious expression on her face
+However, I waved my hands to show it was really okay.
+I didn’t know why, but this person was really worried about me.
+Maybe because she was part of the personnel department… I was
+already aware of my performance though.
+“Dokja-ssi is really good.”
+“Yes?”
+“Then I will live an ivory life.” (Sangah=ivory)
+Yoo Sangah seemed to have decided something as she turned back to
+studying Spanish. I gazed at her for a while before returning to the
+novel.
+Everything had returned to normal, but strangely, my scrolling of the
+novel didn’t go well. Maybe it was because I realized the weight of
+reality that I couldn’t scroll down.
+At that time, a notification appeared at the top of my smartphone.
+[You have one new mail.]
+It was from the author of ‘Ways of Survival.’ I opened the mail.
+-Reader-nim, my novel will become paid from 7 p.m. This will be helpful.
+Good luck.
+[1 attachment.]
+The author said he would give me a gift. What was the gift?
+…Like my name, I was also a reader by nature. So, I was excited to
+receive the mail.
+Yes, it wasn’t bad living as a reader.
+I checked the time. It was 6:55 p.m. I had exactly five minutes before
+the novel became monetized at 7 p.m.
+Then I opened up my list of preferred novels in the app. Since I was
+the only reader, I should leave a congratulatory comment and give
+strength to the author.
+However…
+-The work doesn’t exist.
+I tried typing ‘ruined’ several times in the search box, but the result
+was the same.
+The bulletin board for ‘Ways of Survival’ had disappeared without a
+trace. It was
+strange. Had there ever been a case of a novel being deleted without
+notification when it was going to be monetized?
+At that moment, the subway lights turned off, and the inside of the
+train became dark.
+Kiiiiiiiik-! The subway train shook loudly and let out a metallic sound.
+It caused Yoo Sangah to scream and grab my arm. Then I heard the
+sound of other people getting stirred up. Yoo Sangah gripped my arm
+so tightly that I paid more attention to the pain in my left arm than
+the sudden stop. It took a dozen seconds for the train to stop fully.
+Then I heard confused voices coming from everywhere.
+“Uh, what?”
+“W-What is this?”
+In the dark, one or two smartphone lights turned on. Yoo Sangah still
+held my left arm tightly as she asked, “W-What is going on?”
+I pretended to be unconcerned. “Don’t worry. It isn’t a big deal.”
+“Is that so?”
+“Yes, it is probably a disturbance from a suicide. The engineer will
+soon make an announcement.”
+As I finished speaking, I heard the engineer’s announcement, – Telling
+all passengers on the train. Telling all passengers on the train.
+The loud surroundings became calm.
+I sighed and opened my mouth, “See, it isn’t a big deal. Now an
+apology will air, and the power will come back on…”
+– E-Everyone run away… Run…!
+‘What?’
+There was a beeping sound, and the broadcast turned off. The inside
+of the train became a mess.
+“D-Dokja-ssi? What is this…?”
+A bright light flashed from the front of the subway train. There was a
+loud drumming sound followed by a pop.
+Something was heading this way in the darkness. It was just a
+coincidence that I saw the clock at this moment—7:00 p.m.
+Tick, it felt like the world was stopping.
+Then I heard a voice:
+[The free service of planetary system 8612 has been terminated.]
+[The main scenario has started.]
+This was the moment the genre of my life changed.</pre>`;
+                  break;
+                    case 'chapter3':
+                    content.className = 'content chapter3';
+                    content.innerHTML = `<h3>Chapter 3</h3><p>This is the content of Chapter 3.</p> 
+    <pre>{Dokkaebi. The first time he appeared, someone said so.} (Korean
+goblin.) I didn’t know why but that sentence suddenly popped up in
+my head.
+The stopped subway train, the dark room… These details gave me a
+sense of deja vu.
+The subway had stopped before, but it was rare. Even so, why? I
+remembered the familiar words from a novel… but it was ridiculous.
+Wasn’t it impossible?
+At this moment, the door of car 3807 opened wide, and the electricity
+returned.
+Yoo Sangah muttered by my side, “…Dokkaebi?”
+My head was ringing. I trembled uneasily as the novel I knew and the
+reality before me overlapped.
+{With two small horns and wearing a small straw mat, the strange and
+fluffy creature was floating in the air.}
+{It was too strange to call it a fairy, too evil to call it an angel, and too
+tranquil to call it a demon.}
+{Thus, it was called a ‘dokkkaebi.}
+And I already knew the first thing the dokkaebi would say.
+{&아#@!&아#@!…… }
+[&아#@!&아#@!……]
+Fiction and reality overlapped precisely.
+“What is this?”
+“Augmented reality?”
+Amidst the chattering people, I was thrown into another world alone.
+This was unmistakably a dokkaebi—the very dokkaebi that opened
+the door to tragedy for thousands of lives in Ways of Survival.
+…It was Yoo Sangah’s voice that broke me out of my thoughts. “It
+sounds vaguely like Spanish. Should I talk to it?”
+I was a bit taken aback and asked, “…Do you know what that is? Will
+you ask it for money?”
+“No but…”
+It was at this time that I heard the correct pronunciation of Korean. [
+Ah. Ah. Does this sound good? Ah, I had a hard time because the
+Korean patch didn’t work. Everyone, can you hear my words?]
+As a familiar language was being spoken, I could see people’s
+expressions relax. Then the first one to step up was a big man in a
+suit. “Hey, what are you doing right now?”
+[…Huh?]
+“Are you filming? I have to go because I have to quickly get to an
+audition.”
+He seemed to be an obscure actor since his face was unfamiliar. If I
+were a casting director, I would’ve picked him out for his brimming
+ambition. Unfortunately, the presence before him right now wasn’t a
+director.
+[ Ah, auditions. That’s right. This is also an audition. Haha, there was
+a shortage of data.
+I just entered when it was monetized at 7 p.m.]
+“What? What are you talking about?”
+[Now, now. All of you, relax in your seats and listen to me. From now
+on, I will tell you something very important!]
+My chest was becoming stuffy.
+“What? Quickly get off the train!”
+“Somebody call the captain!”
+“What are they doing without the cooperation of the citizens?”
+“Mother, what is that? A cartoon?”
+There was no doubt about it. This was the development I knew. I
+didn’t want to be mixed up in this… but there was no way. The people
+present wouldn’t listen to the small and cute-looking CG creature. The
+only thing I could do was stop Yoo Sangah who was trying to get up
+from her seat.
+“Yoo Sangah-ssi, it is dangerous, so stay here.”
+“Huh? ” Yoo Sangah’s eyes widened.
+I spoke during a moment of bewilderment, but there was no way to
+explain what I understood. To be exact, I didn’t have to explain.
+[ Haha, you are really loud.]
+There was a presence with a stronger persuasive power than anyone
+else right now.
+[I told you to be quiet.]
+I closed my eyes slowly as the dokkaebi’s eyes turned red. Something
+burst, and the subway became silent.
+“Uh, uh. Uh…” There was a big hole in the forehead of the unknown
+actor who had to go to the audition. The man who had spoken several
+times collapsed on the spot.
+[This isn’t a movie shoot.]
+There was a cracking sound once again. This time, it was the person
+talking about the captain.
+[It isn’t a dream. It isn’t a novel either.]
+One, two… Blood sprayed into the air as the heads of some people
+started to burst.
+They were all the people who had protested against the dokkaebi, as
+well as the ones
+who screamed or went wild. Those who caused the slightest fuss had a
+hole in their heads. Suddenly, the subway became a bloodbath.
+[This isn’t the ‘reality’ that you know. Do you understand? So
+everyone shut up and listen to me.]
+More than half the people present here died. Blood and body pieces
+filled the subway.
+Now, the people didn’t scream. Like primitive apes in front of a
+powerful predator, everyone just watched the dokkaebi with terror.
+I was surprised and held tightly onto the shoulder of Yoo Sangah who
+was hiccuping.
+This was real. The strange message which entered my ears, the
+dokkaebi had appeared in front of me, and the train car that had
+become a bloodbath…
+[Everyone, your lives have been nice so far. Isn’t that right?]
+By the special needs seating, an elderly grandmother met the eyes of
+the dokkaebi.
+[You have been living too long for free. Isn’t life too generous? You
+were born and paid no price for breathing, eating, pooping and
+breeding! Ha! You really live in a good world!]
+Free? No one in the subway lived for free. The people strived to make
+money in order to survive, and they rode the subway on the way
+home from work. Yet at this moment, no one disputed the dokkaebi’s
+words.
+[But now the good days are over. How long can you continue living
+for free? If you want to enjoy happiness, it is common sense to pay a
+price. Isn’t that right?]
+The gasping people couldn’t answer. Then at that time, someone
+carefully raised their hand. “D-Do you want money?”
+I wondered what type of person could speak in the middle of this
+situation, but surprisingly, I knew his face.
+“Yoo Sangah-ssi. Isn’t that Department Head Han of the finance
+team?”
+“…Right.”
+There was no doubt. He was a typical parachute in the company and
+the number one person newcomers avoided. (Parachute: a person who
+relies on their connections) It was Han Myungoh, department head of
+the finance team. Why was that man riding the subway?
+“I will give you money. Take it. Please note that I am a person like
+this.”
+Department Head Han pulled out his business card as people cheered
+him on. It was the atmosphere of a savior fighting against terrorists.
+“How much do you want? A big one? Or two?”
+He was offering a sum that was overly large for a department head of
+a subsidiary company.
+There was a rumor that Han Myungoh was the youngest son of the
+leader of the affiliate company and now I thought it might be true. I
+couldn’t carry that many cheques in my wallet.
+[ Hrmm, you are giving me money?]
+“T-That’s right! The cash I have right now isn’t much but… I can give
+you anything if you let me out of here.”
+[Money, good. A plant fibre that many humans mutually agree on.]
+The department head’s expression brightened. It was an ‘Indeed,
+money is everything’
+expression. How pitiful.
+“Now, this is all I have―”
+[It only applies in your time and space.]
+“Huh? ”
+At the next moment, flames appeared in the air, and the cheques in
+the department head’s hands burned up. Department Head Han let out
+a scream.
+[That paper has no value in the macrocosm world. If you do this one
+more time, I will blow away your head.]
+“U-Uhhh…” Fear once again spread on the faces of the people present.
+It was easy to read what they were thinking because it was just like
+the novel.
+{What the hell will happen now?}
+Only I knew what was going to happen in the future.
+[ Phew, the debt is piling up during the time when you are noisy. Well,
+yes. Rather than explain it a hundred times, isn’t it quicker for you to
+make money yourself?]
+The dokkaebi’s horns rose like they were antennas, and its body
+floated to the ceiling of the train.
+A moment later, a message rang out.
+[#BI-7623 channel is open.]
+[The constellations have entered.]
+A small window emerged in front of everyone’s blank eyes.
+[The main scenario has arrived!]
++
+[Main Scenario #1 – Proof of Value]
+Category: Main
+Difficulty: F
+Clear Conditions: Kill one or more living things.
+Time Limit: 30 minutes
+Compensation: 300 coins
+Failure: Death
++
+The dokkaebi smiled faintly as it became transparent and disappeared
+into the next space.
+[Then, good luck everyone. Please show me an interesting story.]
+</pre>`;
+    break;
+                default:
+                    content.className = 'content';
+                    content.innerHTML = '<h3>Select a chapter to display its content.</h3>';
+            }
+        }
+
+        function showHome() {
+    var content = document.getElementById('content');
+    content.className = 'content';
+    content.innerHTML = `
+        <h3>Home</h3>
+        <div class="home-content">
+            <div class="teaser">
+                <video src="img/teaser_video.mp4" controls></video>
+                <p style="color: black;">This is a teaser video for Omniscient Reader's Viewpoint. Watch it to get a glimpse of the story!</p>
+            </div>
+            <div class="carousel-and-details"> 
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+             <ol class="carousel-indicators">
+         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li> 
+            </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/ex1cover.jpg" class="d-block w-100" alt="Home Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/ex2cover.jpg" class="d-block w-100" alt="Home Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/novel_cover.jpg" class="d-block w-100" alt="Home Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/cover8.jpg" class="d-block w-100" alt="Home Image 2">
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            </div>
+                <div id="orv-details">
+                    <h2>ORV</h2>
+                    <p><strong>Title:</strong> Omniscient Reader's Viewpoint</p>
+                    <p><strong>Genre:</strong> Action, Adventure, Fantasy</p>
+                    <p><strong>Status:</strong> Ongoing</p>
+                    <p><strong>Author:</strong> Sing-Shong</p>
+                </div>
+        </div>
+    </div>
+    <pre id="summary1" style="text-align: center; font-family: Arial, sans-serif; font-size: 20px;">
+        Omniscient Reader's Viewpoint is a fascinating story about a reader who becomes the protagonist of a web novel that he alone had been reading. This novel is filled with suspense, action, and interesting characters, making it a must-read for any fan of the genre.
+</pre>
+    `;
+}
+        function showCharacters() {
+            var content = document.getElementById('content');
+            content.className = 'content';
+            content.innerHTML = `
+                <h3>Characters</h3>
+                <div class="character-content">
+                    <div>
+                        <img src="img/kimdokja.jpg" alt="Character Image 1">
+                        <p style="color: black;">Kim Dokja is the main protagonist of Omniscient Reader's Viewpoint. He is the sole reader of the webnovel Three Ways to Survive in a Ruined World, an apocalyptic fantasy story written by tls123 who read it through the end.</p>
+                    </div>
+                    <div>
+                        <img src="img/hansouyong.jpg" alt="Character Image 2">
+                        <p style="color: black;">Han Sooyoung is one of Kim Dokja's trusted allies and a member of Kim Dokja's Company.</p>
+                    </div>
+                    <div>
+                        <img src="img/yoojoonghyuk.jpg" alt="Character Image 3">
+                        <p style="color: black;">Yoo Joonghyuk is the main character of tls123's novel Three Ways to Survive in a Ruined World. Throughout Omniscient Reader's Viewpoint, he is mainly seen in his 3rd(1864th) and 1863rd regressions.</p>
+                </div>
+                <div>
+                        <img src="img/oldestdream.jpg" alt="Character Image 3">
+                        <p style="color: black;">The Oldest Dream is the most powerful entity in the whole story and is the constellation sponsor of Yoo Joonghyuk, the protagonist of Ways of Survival who gave him the Regression stigma.</p>
+                </div>
+                <div>
+                        <img src="img/yousangah.jpg" alt="Character Image 3">
+                        <p style="color: black;">Yoo Sangah is one of Kim Dokja's colleagues and current party members.</p>
+                </div>
+                </div>
+            `;
+        }
+        
+        function showNovelArt() {
+        var content = document.getElementById('content');
+        content.className = 'content';
+        content.innerHTML = `
+            <h3>Novel Art</h3>
+            <div id="novelArtGrid">
+                <img src="img/novelart1.jpg" alt="i will not allow my self to hurt the people close to me ." onclick="openModal(this)">
+                <img src="img/novelart2.jpg" alt="I was an ordinary person with ordinary skills. But even so, this didn't mean I could only do ordinary things" onclick="openModal(this)">
+                <img src="img/novelartkim.jpg" alt="“I will always sacrifice my self in order to save the world.”- Yoo Joonghyuk" onclick="openModal(this)">
+                <img src="img/novelart4.jpg" alt="“It was my story. I laughed as Yoo Joonghyuk's sword pierced my heart.[Your fate has been realized.]My body slowly sank down and Yoo Joonghyuk held onto me. Kim Dokja. It was a really great story. Isn't that right? Let's meet again, Yoo Joonghyuk.Kim Dokja! No! Kim Dokja!At the last moment, he tightly held me by the neck. However, it was already too late.”" onclick="openModal(this)">
+                <img src="img/novelartur.jpg" alt="“Person who is loved by an archangel”" onclick="openModal(this)">
+                <img src="img/novelart10.jpg" alt="“the writer and her only reader”" onclick="openModal(this)">
+                <img src="img/novelart8.jpg" alt="“Demon king of salvation”" onclick="openModal(this)">
+                <img src="img/novelart9.jpg" alt="the only loved constellations" onclick="openModal(this)">
+                <img src="img/novelarttrio.jpg" alt="“the main trio of this damned world”" onclick="openModal(this)">
+                <img src="img/novelarty.jpg" alt="“The lonely road of a regressor”" onclick="openModal(this)">
+                <img src="img/kimdokja.jpg" alt="“It doesn't matter what gender, race or world you originated from. It doesn't matter if you are strong or weak, famous or not famous. Anything is okay. What I am looking for is passion. I hope you have the passion to see the end of this damn story with me."- Kim Dokja”" onclick="openModal(this)">
+                <img src="img/oldyjh.jpg" alt="“Tell me, you fool. If I continue to regress, will I get to ever get to meet you again?- Yoo Joonghyuk”" onclick="openModal(this)">
+                <img src="img/hansouyong.jpg" alt="If this story can really save you, then I’ll keep writing the epilogue for you until the end of the time, for eternity" onclick="openModal(this)">
+                <img src="img/leejihye.png" alt="If we are really characters in a fictional novel, why did you die for us over and over? - Lee Jihye to Kim Dokja" onclick="openModal(this)"> 
+                <img src="img/novelart3.jpg" alt="Jung Heewon unsheathed her sword and spoke. “I don’t know anything about the future. However, I do know this. You said that you want to save this world? It’s the same for me, too.” Her determination manifested in the whitish flames billowing on the [Sword of Judgement].[That man is the world I wish to save]." onclick="openModal(this)">
+            </div>
+            <div id="myModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+        `;
+    }
+
+        function openModal(imgElement) {
+        var modal = document.getElementById('myModal');
+        var modalImg = document.getElementById('img01');
+        var captionText = document.getElementById('caption');
+
+        modal.style.display = "block";
+        modalImg.src = imgElement.src;
+        captionText.innerHTML = imgElement.alt;
+    }
+
+        function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <title>Lord of the Mysteries</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+   <link rel="stylesheet" href="stylesheet.css">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Lord of the Mysteries</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home" onclick="showHome()">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#characters" onclick="showCharacters()">Characters</a>
+                </li>
+               
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Chapters
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#chapter1" onclick="showContent('chapter1')">Chapter 1</a>
+                        <a class="dropdown-item" href="#chapter2" onclick="showContent('chapter2')">Chapter 2</a>
+                        <a class="dropdown-item" href="#chapter3" onclick="showContent('chapter3')">Chapter 3</a>
+                    </div>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="#novelArtCarousel" onclick="showNovelArt()">Novel Art</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="content" class="container mt-4">
+        <h3>Select a section or a chapter to display its content.</h3>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            } 
+        }
+
+        function showContent(chapter) {
+            var content = document.getElementById('content');
+            switch(chapter) {
+                case 'chapter1':
+                    content.className = 'content chapter1';
+                    content.innerHTML = `<h3>Chapter 1</h3><p>This is the content of Chapter 1.</p>
+                  <pre> Painful!
+
+How painful!
+
+My head hurts so badly!
+
+A gaudy and dazzling dreamworld filled with murmurs instantly shattered. The sound asleep Zhou Mingrui felt an abnormal throbbing pain in his head as though someone had ruthlessly lashed at him with a pole again and again. No, it was more like a sharp object pierced right through his temples followed by a twist!
+
+Ouch... In his stupor, Zhou Mingrui attempted to turn around, look up, and sit up; however, he was completely unable to move his limbs as though he had lost control over his body.
+
+From the looks of it, I’m still not awake. I’m still in a dream... Who knows, perhaps the next scene will be of me thinking I’m already awake, but in fact, am actually still sleeping...
+
+Zhou Mingrui, who was not unfamiliar with similar encounters, tried his best to focus in order to escape the shackles placed upon him by the darkness and confusion.
+
+However, while still in his reverie, whatever will he could summon was ethereal like a fleeting fog. He found his thoughts difficult to control and introspect. No matter how much he tried, he still lost his focus as random thoughts surfaced in his mind.
+
+Why would I suddenly have such an excruciating headache in the middle of the night?
+
+And it’s really painful!
+
+Could it be something like a cerebral hemorrhage?
+
+F**k, don’t tell me I’m going to die young?
+
+I need to wake up! Now!
+
+Eh? Why doesn’t it seem to hurt as much as before? But why does it still feel like a blunt knife is slicing through my brains...
+
+From the looks of it, sleep is impossible. How am I to show up for work tomorrow?
+
+Why am I still thinking about work? This is some authentic headache. Of course I have to take time off! I don’t have to worry about my manager’s grumblings!
+
+Hey, putting it that way, it doesn’t seem too bad. Hehe, I can end up getting some spare time for myself!
+
+Throbbing pain inundated Zhou Mingrui, allowing him to slowly accumulate immaterial strength until he was finally able to move his back and open his eyes. He finally broke free from his reverie.
+
+His vision first blurred before it was screened by a faint crimson red. All he could see was a study desk made of burly wood in front of him. Right in the middle was an opened notebook with coarse, yellow pages. The title was eye-catchingly written with strange, deep black lettering.
+
+To the left of the notebook was a stack of neatly arranged books, numbering about eight. The wall on their right was inset with grayish-white pipes with wall lamps connected to them.
+
+The lamp had a classical Western style to it. It was about half the size of an adult’s head with an inner layer of transparent glass and an exterior gridded with black metal.
+
+Diagonally beneath the lamp was a black ink bottle shrouded in a pale red glow. Its embossed surface formed a blurry angel pattern.
+
+In front of the ink bottle and to the right of the notebook sat a dark-colored pen with a fully circular body. Its tip shimmered with a faint glint while its cap rested right beside a brass revolver.
+
+A gun? A revolver? Zhou Mingrui was completely taken aback. The things laid before him were alien to him. It looked nothing like his room!
+
+While feeling shocked and confused, he discovered that the desk, notebook, ink bottle, and revolver were covered in a layer of crimson ‘veil,’ a result of the light shining from the window.
+
+Subconsciously, he looked up and shifted his gaze up bit by bit.
+
+In midair, a crimson moon hung high above the backdrop of a ‘black velvet curtain,’ glowing in silence.
+
+This... Zhou Mingrui felt inexplicably horrified as he stood up abruptly. However, before his feet fully straightened, his brain protested with throbbing pain. It made him temporarily lose his strength as he fell uncontrollably. His buttocks slammed heavily onto the burly wood chair.
+
+Pa!
+
+The pain did little. Zhou Mingrui stood up again by propping himself up. He turned around in a fluster as he began to size up the environment he was in.
+
+The room was not very large, with a brown door on each side of the room. Close to an opposite wall was a low wooden bed.
+
+Between the bed and the left door was a cabinet. Its two doors were swung open and beneath it were five drawers.
+
+To the side of the cabinet, there was the same grayish-white pipe on the wall at the height of a person. However, it was connected to a strange mechanical device with exposed gears and bearings in several spots.
+
+Items resembling coal stoves sat in the right corner of the room near the table, along with soup pots, iron pots, and other kitchen utensils.
+
+Across the right door was a dressing mirror with two cracks. Its bottom was made of wood and the patterns were simple and plain.
+
+With a sweep of his gaze, Zhou Mingrui noticed himself in the mirror—the present him.
+
+Black hair, brown pupils, a linen shirt, thinly built, average-looking features and a rather deep outline...
+
+This... Zhou Mingrui immediately drew a gasp as many helpless and confused guesses surfaced in his mind.
+
+The revolver in ancient European style and the crimson moon that looked different from Earth’s moon could only mean one thing!
+
+C-could I have transmigrated? Zhou Mingrui widened his mouth slightly.
+
+He had grown up reading web novels and had often fantasized over such scenes. However, he momentarily found it hard to accept the situation when he found himself in one.
+
+This was probably what it meant to love a fantasy 1
+
+? In a minute, Zhou Mingrui had already cursed himself while trying to make the best out of his adverse situation.
+If not for the still throbbing headache that made his thoughts high strung but clear, he would have definitely suspected that he was dreaming.
+
+Calm down, calm down, calm down... After taking a few deep breaths, Zhou Mingrui worked hard to stop panicking.
+
+At that moment, as his mind and body calmed down, memories began flooding him as they slowly appeared in his mind!
+
+Klein Moretti, a citizen of the Northern Continent’s Loen Kingdom, Awwa County, City of Tingen. He is also a recent graduate from the Department of History at Khoy University...
+
+His father was a sergeant of the Royal Army who had sacrificed himself during a colonial conflict with the Southern Continent. The bereavement allowance gave Klein the opportunity to study at a private language school and laid the foundation for his admission into university...
+
+His mother was a devotee of the Evernight Goddess. She passed away the year Klein passed the entrance examinations to Khoy University...
+
+He also had an elder brother and a younger sister. They stayed in a two bedroom apartment together...
+
+Their family was not wealthy and its situation could even be described as somewhat wanting. At present, the family was supported solely by the elder brother who worked at an import and export company as a clerk...
+
+As a history graduate, Klein grasped knowledge of the ancient Feysac language—deemed the origin of all languages in the Northern Continent—as well as the Hermes language which often appeared in ancient mausoleums as well as text regarding sacrificial and praying rituals...
+
+Hermes language? Zhou Mingrui’s mind stirred as he reached out to rub his throbbing temples. He cast his gaze toward the table at the opened notebook. He noticed that the text on the yellowed paper turned from strange to alien, before turning from alien to something familiar. It then turned into something readable.
+
+It was text written in Hermes language!
+
+The dark ink wrote the following:
+
+“Everyone will die, including me.”
+
+Hiss! Zhou Mingrui felt inexplicably horrified. He instinctively leaned back in an attempt to widen the distance between him and the notebook, as well as the text on it.
+
+Being very weak, he nearly fell down but managed to extend his hands in a fluster to hold onto the edge of the table. He felt that the surrounding air was turbulent as though there were faint murmurings resounding in it. The feeling was akin to hearing horror stories being recounted by elders when he was young.
+
+He shook his head, believing that everything was an illusion. Zhou Mingrui found his balance and shifted his gaze from the notebook as he heaved for breath.
+
+This time, his gaze landed on the shimmering brass revolver. He suddenly had a question arise in him.
+
+With Klein’s family situation, how can they have the money or means to buy a revolver?
+
+Zhou Mingrui could not help but frown.
+
+While in deep thought, he suddenly discovered a red handprint to the side of the table. Its color was deeper than the moonlight and much thicker than the ‘veil.’
+
+It was a bloody handprint!
+
+“A bloody handprint?” Zhou Mingrui subconsciously flipped his right hand that had been holding the edge of the table. Looking down, he saw that his palm and fingers were covered in blood.
+
+At the same time, the throbbing pain in his head continued. Although it had weakened a little, it continued incessantly.
+
+Did I smash my head open?
+
+Zhou Mingrui guessed as he turned around and walked towards a cracked dressing mirror.
+
+A few steps later, a black-haired figure of medium build and brown eyes appeared clearly in front of him. The person had a distinct scholarly air to him.
+
+Is this the present me? Klein Moretti?
+
+Zhou Mingrui was stunned momentarily. Since there was insufficient lighting at night, he failed to see something clearly. He continued forward until he was just a step short from colliding with the mirror.
+
+Using the crimson veil-like moonlight as illumination, he turned his head and examined the corner of his forehead.
+
+A clear reflection appeared in the mirror. His temple had a grotesque wound with burn marks along its periphery. Blood stained the wound’s surroundings and there were grayish-white brain juices squirming slowly within.</pre>`;break
+                    case 'chapter2':
+                    content.className = 'content chapter2';
+                    content.innerHTML = `<h3>Chapter 2</h3><p>This is the content of Chapter 2.</p>
+                  <pre>Tap! Tap! Tap!
+
+Zhou Mingrui reeled back in fear at the sight that greeted him. It was as though the person in the dressing mirror was not himself, but a dessicated corpse.
+
+How could a person with such grievous wounds be still alive!?
+
+He turned his head in disbelief again and checked the other side. Even though he was a distance away and the lighting was poor, he could still see the penetrating wound and dark red blood stains.
+
+“This...”
+
+Zhou Mingrui drew a deep breath as he tried hard to calm himself.
+
+He reached out to press his left chest and sensed his racing heart that exuded immense vitality.
+
+He then touched his exposed skin. Beneath the slight coldness was flowing warmth.
+
+When he squatted down and after verifying that his knees could bend, Zhou Mingrui stood up again and calmed down.
+
+“What’s happening?” he muttered with a frown. He planned to inspect his head injury seriously once more.
+
+He took two steps forward and suddenly paused. The moonlight of the sanguine moon was relatively dark, so it was insufficient for his ‘serious inspection.’
+
+A memory fragment triggered as Zhou Mingrui turned his head to look at the grayish-white pipes and the metallic-gridded lamp on the wall right beside the study desk.
+
+This was the most common gas lamp of the times. Its flame was stable and its illumination capabilities were excellent.
+
+With Klein Moretti’s family situation, even a kerosene lamp was a dream, much less a gas lamp. Using candles was most apt for their standing and stature. However, back when he burned the midnight oil four years ago to be admitted into Khoy University, his elder brother, Benson, felt that it was an important matter which their family’s future depended upon. Therefore, he insisted on creating conducive studying conditions for Klein even if it meant taking on debt.
+
+Of course, Benson, who was literate and had worked for several years, was not a rash person who did not think of the consequences. He had quite some tricks up his sleeve. He reasoned with the landlord to ‘raise the apartment’s standards by installing gas pipes to improve the likelihood of rentals in the future.’ The landlord was convinced and provided the money to complete the basic modifications. Then, using the convenience of working at an import and export company, he purchased a brand new gas lamp which was nearly at cost price. In the end, all he needed was to use his savings and did not need to borrow money.
+
+After the memory fragment flashed past his mind, Zhou Mingrui came to the desk where he turned the pipe’s valve and began twisting the gas lamp’s switch.
+
+With a sputtering sound, a spark sounded from friction. Light did not descend upon Zhou Mingrui as he had expected.
+
+He twisted the switch a few more times, but all the gas lamp did was sputter and remain dark.
+
+“Hmm...” Retracting his hand and pressing on his left temple, Zhou Mingrui sought for the reason by rummaging through his memory fragments.
+
+A few seconds later, he turned around and walked toward the door. He arrived at the machine installation which was similarly inset into the wall and had grayish-white pipes connected to it.
+
+This was a gas meter!
+
+After seeing the exposed gears and bearings, Zhou Mingrui took out a coin from his trousers’ pocket.
+
+It was dark yellow in color and had a bronze shimmer to it. The front of the coin was engraved with a portrait of a crown-wearing man, and there was a ‘1’ on a clump of wheat on the back.
+
+Zhou Mingrui knew that this was the most basic currency of the Loen Kingdom. It was called a copper penny. One penny’s purchasing power was roughly three to four yuan before his transmigration. Such coins had other denominations such as the five pence, a halfpence and a quarterpence. Despite the three types, the denominations were not in small-enough units. In everyday life, one had to buy several different things just to spend a single coin from time to time.
+
+After flipping the coin—which was only minted and circulated after King George III ascended to the throne—a few times, Zhou Mingrui inserted it into the gas meter’s thin vertical ‘mouth.’
+
+Clink! Clang!
+
+After the penny fell to the bottom of the meter, the sound of grinding gears sounded immediately, producing a short but melodious mechanical rhythm.
+
+Zhou Mingrui stared at the meter for a few seconds before returning to the burly wood desk. He then reached out to twist the gas lamp’s switch.
+
+After some sputtering, there was a sharp sound!
+
+A fire plume ignited and rapidly grew. Bright light first occupied the internals of the wall lamp before penetrating the transparent glass, blanketing the room with a warm glow.
+
+The darkness quickly receded as the crimson retreated out the window. Zhou Mingrui felt at ease for a baffling reason as he quickly came in front of the dressing mirror.
+
+This time, he seriously inspected his temple and did not miss a single detail.
+
+After a few rounds of inspection, he realized that apart from the original blood stain, liquid was no longer flowing out of the grotesque wound. It appeared like it had received the best hemostasis and bandaging. As for the slowly squirming grayish-white brain and the discernible growth of flesh and blood around the wound, it meant that the wound might take thirty to forty minutes, or maybe even two to three hours before it would only leave a light scar.
+
+“The restorative effects that transmigration brings?” Zhou Mingrui curled up the right corner of his mouth as he muttered silently.
+
+Following that, he let out a long sigh. Regardless, he was still alive!
+
+After settling his mind, he pulled open a drawer and took out a tiny piece of soap. He took one of the old and tattered towels hanging by the side of the cupboard and opened the door. He then walked to the public bathroom which was shared by the tenants on the second floor.
+
+Yes, I should clean up the blood stains on my head, or I’ll keep looking like a crime scene. It’s fine scaring myself, but if I were to scare my sister, Melissa, when she gets up early in the morning tomorrow, it would be quite problematic!
+
+The corridor outside was pitch black. Silhouettes were barely accentuated by the crimson moonlight from the window at the end of the corridor. They looked like a pair of monster eyes that silently observed the living late into the night.
+
+Zhou Mingrui lightened his footsteps as he walked towards the communal bathroom with a shuddering fear.
+
+When he entered, there was even more moonlight, allowing him to see everything clearly. Zhou Mingrui stood in front of a wash basin and turned the tap’s knob.
+
+Upon hearing the gushing sound of water, he suddenly recalled his landlord, Mr. Franky.
+
+As water was included in the rent, this short and thin gentleman who wore a top hat, a vest, and a black suit, always inspected the bathroom actively to take note of any sounds of flowing water.
+
+If the water gushed too loudly, Mr. Franky would ignore all of his gentlemanly traits by flailing his walking stick and striking the bathroom’s door, shouting things like ‘Darn thief,’ ‘Wastage is a shameless matter,’ ‘I’ll remember you,’ ‘If I see this happen another time, scram along with your filthy luggage,’ ‘Mark my words, this is the most value-for-money apartment in Tingen City. You will not find a more kindly landlord anywhere else!’
+
+Putting away those thoughts, Zhou Mingrui used a moist towel to clean the blood stains from his face again and again.
+
+After checking himself using the rundown mirror in the bathroom and verifying that all that was left were a hideous wound and a pale face did Zhou Mingrui relax. Then, he took off his linen shirt and used a bar of soap to wash away the bloodstains.
+
+At that moment, he knitted his brows and recalled of a possible problem.
+
+The wound was too exaggerated and there was too much blood. Apart from his body, his room likely still had signs of his injury!
+
+After Zhou Mingrui was done with his linen shirt a few minutes later, he briskly returned to his apartment with a moist towel. He first wiped the blood handprint on the desk and then, using the gas lamp’s illumination, sought out spots which he missed out.
+
+He immediately discovered that quite a substantial amount of blood had splattered onto the floor beneath the desk. And there was a yellow bullet to the left side of the wall.
+
+“Releasing a round with a revolver pointed at the temple?” After mixing and matching the clues from before, Zhou Mingrui had a rough idea how Klein had died.
+
+He was in no hurry to verify his guess. Instead, he seriously wiped away the blood stains and cleaned up the ‘scene.’ Following that, he took the bullet and returned to the side of his desk. He opened the revolver’s cylinder and poured out the rounds inside.
+
+A total of five rounds and a cartridge shell all had a brass luster to them.
+
+“Indeed...” Zhou Mingrui looked at the empty cartridge shell in front of him and stuffed the rounds back into the cylinder while nodding.
+
+He shifted his gaze to the left and it landed on the notebook’s words: ‘Everyone will die, including me.’ Following that, even more questions arose in him.
+
+Where did the gun come from?
+
+Was it suicide or a faked suicide?
+
+What kind of trouble could a history graduate of humble origins get himself into?
+
+Why would such a suicide method only leave behind so little blood? Was it because I transmigrated in a timely manner and it came with healing benefits?
+
+After pondering for a moment, Zhou Mingrui changed into another linen shirt. He sat on the chair and began pondering over more important matters.
+
+Klein’s experience was still not something he needed to concern himself with. The true problem was to figure out the reason for his transmigration and if he could return!
+
+His parents, relatives, best buddies, and friends. The fascinating world of the Internet and all sorts of delicious delicacies... These were reasons that prompted his desire to return!
+
+Click. Click. Click... Zhou Mingrui’s right hand was subconsciously pulling out the revolver’s cylinder and slamming it back into place, again and again.
+
+Yea, there has not been much difference for me between this period of time and the past. I was just a little unlucky, but why would I transmigrate for no baffling reason?
+
+Bad luck... Yes, I tried a luck enhancement ritual before dinner today!
+
+A thought flashed in Zhou Mingrui’s mind, illuminating the memories which were concealed by a fog of confusion.
+
+As a qualified keyboard politician, keyboard historian, keyboard economist, keyboard biologist, and keyboard folklorist, he had always deemed himself as ‘knowing something of everything.’ Of course, his best buddy would often mock him as ‘only knowing a little of everything.’
+
+And one of them was Chinese Divination.
+
+When he visited his hometown last year, he had discovered a thread-bound book titled ‘Quintessential Divination and Arcane Arts of the Qin and Han Dynasty’ at an old bookstore. It looked pretty interesting and could aid him in posturing on the Internet, so he bought it. Unfortunately, his interest was short-lived. The vertical script it used made the reading experience horrible. All he did was flip through the beginning pages before he threw it into a corner.
+
+He had experienced a spate of bad luck in the past month—losing his cell phone, customers running away after cheating him, and mistakes at work. Only then did he suddenly recall the luck enhancement ritual written at the beginning of ‘Quintessential Divination and Arcane Arts.’ Furthermore, the requirements were extremely simple, without any basic foundation requirements.
+
+All he needed was to get four portions of the staple food in his area and place them in the four corners of his room. They could be placed on furniture such as tables and cupboards. Then, standing in the middle of the room, he had to take four steps in a counter-clockwise fashion to make a square. The first step required him to sincerely chant ‘Blessings Stem From The Immortal Lord of Heaven and Earth.’ The second step was to silently chant, ‘Blessings Stem From The Sky Lord of Heaven and Earth.’ The third step was ‘Blessings Stem From The Exalted Thearch of Heaven and Earth,’ and the fourth step was ‘Blessings Stem From The Celestial Worthy of Heaven and Earth.’ After the four steps were taken, he needed to close his eyes and wait five minutes in his original spot. Only then would the ritual be considered complete.
+
+Since it did not cost him any money, he found the book, followed what was stipulated, and did it before dinner. However... nothing happened back then.
+
+Who would have guessed that he would actually transmigrate in the middle of the night!
+
+Transmigration!
+
+“There is a distinct possibility that it’s due to that luck enhancement ritual... Yes, I should give it a try here tomorrow. If it’s really because of that, I stand a chance of transmigrating back!” Zhou Mingrui stopped flicking the revolver’s cylinder and suddenly sat straight up.
+
+Regardless, he had to give it a try!
+
+He had to attempt a Hail Mary!</pre>`;
+                  break;
+                    case 'chapter3':
+                    content.className = 'content chapter3';
+                    content.innerHTML = `<h3>Chapter 3</h3><p>This is the content of Chapter 3.</p> 
+    <pre>After confirming his plan, Zhou Mingrui immediately felt he had a mental crutch. His fear and unease were all swept away into a corner of his mind.
+
+Only then did he had the mood to carefully study Klein’s memory fragments.
+
+Zhou Mingrui habitually stood up before turning off the pipe’s valve. He watched the wall lamp gradually dim until its flame extinguished before sitting back down. As he subconsciously fiddled with the revolver’s brass cylinder, he pressed the side of his head. He slowly recalled his memories in the crimson-dyed darkness as though he was the most attentive viewer in a movie theater.
+
+Perhaps as a result of having a bullet pass through his head, Klein’s memories were like shattered glass. Not only were the memories not contiguous, there were many spots which were clearly missing. For example, memories pertaining to how the exquisite revolver appeared in his possession, whether he had committed suicide, or was killed, as well as the meaning of the words ‘Everyone will die, including me’ on the notebook, or whether he had participated in anything odd two days before the incident.
+
+Not only had these particular memories become fragmented, there were also missing pieces. It was the same even for knowledge he ought to know. In light of the present situation, Zhou Mingrui believed that if Klein were to return to university, it was unlikely he could graduate. This was despite him having left campus just days ago without relaxing one bit.
+
+He needs to participate in the Tingen University’s History department interview two days later...
+
+The university graduates of Loen Kingdom do not have the tradition of staying at their alma mater... His mentor had given him a recommendation letter for Tingen University and Backlund University...
+
+...
+
+Through the window, Zhou Mingrui silently observed the red moon setting in the west. The gradual sinking of the moon continued until faint light glowed from the east, dyeing the horizon golden.
+
+At that moment, there was a commotion inside the apartment. Soon, the sound of footsteps approached his door.
+
+“Melissa is awake... She’s really as punctual as always.” Zhou Mingrui smiled. Due to Klein’s memories, seeing Melissa made him feel as though she was really his younger sister.
+
+However, I do not have a younger sister... He immediately contradicted himself.
+
+Melissa was different from Benson and Klein. Her rudimentary education was not completed at the Sunday school classes offered by the Church of the Evernight Goddess. When she reached schooling age, the Loen Kingdom had enacted the ‘Basic Education Law.’ A Primary and Secondary Education Committee was established and was specially provided with funding, increasing the kingdom’s investment into education.
+
+In less than three years, under the premise that numerous church schools would be incorporated, many public primary schools were established to strictly maintain the principle of religious neutrality. This was to prevent education from involving itself in the conflicts between the Lord of Storms, Evernight Goddess, and the God of Steam and Machinery.
+
+Compared to Sunday school that only cost a copper penny a week, a public primary school’s cost of three pence a week appeared rather expensive. However, the former only provided education every Sunday, whereas the latter provided six days of classes a week. In conclusion, the price was so low that it was almost free.
+
+Melissa was different from most girls. From a young age, she enjoyed things like gears, springs, and bearings. Her ambition was to be a steam mechanic.
+
+Having suffered from a lack of culture, Benson, who knew the importance of education, supported his sister’s dreams just like how he supported Klein’s university education. After all, Tingen Technical School was only considered secondary education. There was no need for her to attend language school or a public school for more knowledge.
+
+In July last year, fifteen-year-old Melissa passed her entrance examinations and fulfilled her dreams of becoming a student at the Tingen Technical School’s Steam and Machinery department. As such, her weekly school fees raised to nine pence.
+
+Meanwhile, Benson’s company was affected by the situation in the Southern Continent. There was a drastic drop both in profit and business transactions. More than a third of the employees were retrenched. In order to keep his job and maintain their livelihood, Benson could only accept more arduous tasks. He had to work overtime more frequently or head to places with harsh environments. That was what he was occupied with the past few days.
+
+It was not that Klein did not think of helping share his elder brother’s burden but being born a commoner and having been admitted into an average language school, he felt a strong sense of inadequacy when he enrolled into university. For example, as the origin of all languages in the Northern Continent, the ancient language of Feysac was something all the children of nobles and of the wealthy class would learn from a young age. In contrast, he only made first contact with it in university.
+
+He faced many similar aspects during his schooling career. Klein nearly gave his all and often stayed up late into the night and woke up early before barely managing to catch up to the others, eventually allowing him to graduate with average results.
+
+Memories regarding his elder brother and younger sister remained active in Zhou Mingrui’s mind until he turned the doorknob open. Only then did he jolt awake and remember that he held a revolver in his hand.
+
+This was a semi-regulated item!
+
+It will scare children!
+
+Also, there’s still the wound on my head!
+
+With Melissa arriving at any moment, Zhou Mingrui pressed onto his temple and hurriedly pulled open a desk drawer and threw the revolver in before slamming it close.
+
+“What happened?” Melissa looked over curiously when she heard the commotion.
+
+She was still in the prime of her youth. Even though she did not have much nutritious food to eat, making her face thin and slightly pale, her skin remained lustrous as it exuded the vibes of a young girl.
+
+When Zhou Mingrui saw his sister’s brown eyes look over, he forcibly composed himself and picked up an item beside his hand before calmly closing the drawer to conceal the existence of the revolver. He placed his other hand on his temple, the texture confirming that his wound had already healed!
+
+He took out a silver vine-leaf pocket watch and pressed the top gently, causing its cover to flip open.
+
+It was a picture of the siblings’ father. It was the most valuable item the Royal Army sergeant left behind, but being a second-hand item, it would often malfunction from time to time in recent years even though he had gotten a watchsmith to fix it. It had embarrassed Benson who enjoyed bringing it with him to elevate his status many a time, so it was thrown away back at home in the end.
+
+It had to be said that perhaps Melissa did have talent in machinery. After grasping the principles behind the watch, she borrowed the tools from her Technical School to fiddle with the pocket watch. Recently, she even claimed to have fixed it!
+
+Zhou Mingrui looked at the watch’s open cover and saw that the second hand was not moving. Subconsciously, he twisted the top dial to wind the pocket watch.
+
+However, despite winding it a few times, he did not hear the sound of taut springs. The second hand remained motionless.
+
+“It looks like it’s broken again.” He looked at his sister while trying to find a topic of conversation.
+
+Melissa shot him an expressionless glance and briskly walked over to take the pocket watch away.
+
+She stood in her spot and pulled up the button sitting atop the pocket watch. With a few simple turns, the tick-tocking of the second hand sounded.
+
+Isn’t pulling the button up usually meant to adjust the time... Zhou Mingrui’s expression immediately turned blank.
+
+At that moment, a bell chimed from a faraway cathedral. It chimed six times, sounding distant and ethereal.
+
+Melissa tilted her head to listen to it and pulled the button up once again. Following that, she turned it to synchronize the time.
+
+“It’s okay now,” she said simply without emotion. She then pressed the top button back and handed the pocket watch back to Zhou Mingrui.
+
+Zhou Mingrui returned a smile politely in embarrassment.
+
+Melissa gave her elder brother a piercing stare before turning to walk to the cupboard. She took her toiletries and towel before opening the door to leave. She headed for the public bathroom.
+
+Why did her expression have a look of disparagement and resignation?
+
+Is it a look of love and concern for a retarded brother?
+
+Zhou Mingrui lowered his head and chuckled. He closed the pocket watch’s cover with a click before opening it again.
+
+He repeated this action as his idle thoughts focused on a question.
+
+Klein committed suicide without a silencer. Well, I’ll consider it as suicide for now. His suicide should have caused quite a commotion; yet, Melissa, who was just a wall away, did not notice it at all.
+
+Was she sleeping too soundly? Or is Klein’s suicide shrouded in mystery to begin with?
+
+Click! The pocket watch opened. Clack! The pocket watch closed... Melissa returned from washing up and saw her brother’s subconscious act of constantly opening and closing the pocket watch.
+
+Her gaze was once again glazed with exasperation as she said with a sweet voice, “Klein, take out all the remaining bread. Remember to buy fresh ones today. There’s meat and peas too. Your interview is soon. I’ll make you mutton stewed with peas.”
+
+As she spoke, she moved a stove out from a corner. With some charcoal, she boiled a pot of hot water.
+
+Before the water boiled, she opened the cupboard’s lowest drawer and took out what seemed like a treasure—a can of inferior tea leaves. She threw about ten leaves into the pot and pretended that it was real tea.
+
+Melissa poured two big cups of tea as she shared two pieces of rye bread with Zhou Mingrui over tea.
+
+There is no sawdust or excessive gluten mixed in, but it is unappetizing... Zhou Mingrui still felt weak and was starving. He forced himself to swallow the bread with the tea while complaining inwardly.
+
+Melissa finished eating a few minutes later. After she adjusted her black hair that reached down to her vest, she looked at Zhou Mingrui and said, “Remember to buy fresh bread. All we need is eight pounds. The weather is hot, so the bread will easily spoil. Also, buy the mutton and peas. Remember to buy them!”
+
+Indeed, she was showing concern for her dull brother. She even had to repeat to emphasize it another time... Zhou Mingrui nodded with a smile.
+
+“Alright.”
+
+Regarding the Loen Kingdom’s pound, Zhou Mingrui matched Klein’s muscle memory with his. He believed it was close to half a kilogram of what he was accustomed to.
+
+Melissa did not say anything further. She stood up and tidied the area. After packing away the last bit of bread for lunch, she put on a tattered veil cap that their mother left behind, picked up a self-sewn bag used to carry her books and stationery, and prepared to leave.
+
+It was not Sunday, so she had an entire day of classes to attend.
+
+Walking from their apartment to Tingen Technical School took about fifty minutes. There were public horse carriages that cost a penny a kilometer with a limit of four pence in the city and six pence in the city outskirts. In order to save money, Melissa would leave ahead of time and walk to school.
+
+Moments after she opened the main door, she paused in her footsteps and turned her body halfway, saying, “Klein, don’t buy too much mutton or peas. Benson might come back on Sunday. Oh, and remember we only need eight pounds of bread.”
+
+“Alright. Sure thing,” answered Zhou Mingrui exasperatedly.
+
+Simultaneously, he repeated the word ‘Sunday’ a few times in his head.
+
+In the Northern Continent, a year was similarly split into twelve months. Every year, there was 365 or 366 days. A week was similarly split into seven days.
+
+The splitting of months was a result of astronomical observations. It made Zhou Mingrui suspect whether he was in a parallel world. As for the splitting of days, it was a result of religion. This was because Northern Continent had seven orthodox gods—the Eternal Blazing Sun, the Lord of Storms, the God of Knowledge and Wisdom, the Evernight Goddess, Mother Earth, the God of War, and the God of Steam and Machinery.
+
+Watching his sister close the door and leave, Zhou Mingrui suddenly sighed. Soon, his thoughts focused onto the luck enhancement ritual.
+
+Sorry, I really wish to return home...
+</pre>`;
+                 break;
+                default:
+                    content.className = 'content';
+                    content.innerHTML = '<h3>Select a chapter to display its content.</h3>';
+            }
+        }
+
+        function showHome() {
+    var content = document.getElementById('content');
+    content.className = 'content';
+    content.innerHTML = `
+        <h3>Home</h3>
+        <div class="home-content">
+            <div class="teaser">
+                <video src="img/teaser_video.mp4" controls></video>
+                <p style="color: black;">This is a teaser video for Lord of the Mysteries. Watch it to get a glimpse of the story!</p>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+             <ol class="carousel-indicators">
+         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/cover1.jpg" class="d-block w-100" alt="Home Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/cover2.jpg" class="d-block w-100" alt="Home Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/cover3.jpg" class="d-block w-100" alt="Home Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/cover4.jpg" class="d-block w-100" alt="Home Image 2">
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+                <div id="lotm-details">
+            <h2>Lord of the Mysteries</h2>
+            <p><strong>Title:</strong> Lord of the Mysteries</p>
+            <p><strong>Genre:</strong> Action, Adventure, Fantasy</p>
+            <p><strong>Status:</strong> Ongoing</p>
+            <p><strong>Author:</strong> Cuttlefish That Loves Diving</p>
+            </div>
+        <pre id="summary1" style="text-align: center; font-family: Arial, sans-serif; font-size: 20px;">
+            In the waves of steam and machinery, who could achieve extraordinary? In the fogs of history and darkness, who was whispering? I woke up from the realm of mysteries and opened my eyes to the world.
+
+Firearms, cannons, battleships, airships, and difference machines. Potions, divination, curses, hanged-man, and sealed artifacts… The lights shone brightly, yet the secrets of the world were never far away. This was a legend of the “Fool”.
+</pre>
+    `;
+}
+function showCharacters() {
+    var content = document.getElementById('content');
+    content.className = 'content';
+    content.innerHTML = `
+    <h3>Characters</h3>
+<div id="characterCarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <img src="img/kleinmoretti.jpg" class="d-block w-100" alt="Character 1">
+    <div class="carousel-caption d-none d-md-block">
+    <h5>Klein Moretti</h5>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#description1" aria-expanded="false" aria-controls="description1">
+      Open Description
+    </button>
+    <div class="collapse" id="description1">
+      <p>Klein Moretti is the main protagonist of Lord of Mysteries, and a character of Circle of Inevitability.
+
+"He" is the current owner of the Sefirah Castle, and Half a Lord of Mysteries with authorities over the Fool, Door and Error Pathways. "He" is also the mysterious leader of the Tarot Club known as The Fool and a Transmigrator who comes from the modern era. From year 1352 of the Fifth Epoch, "He" became the God of the Church of the Fool.</p>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item">
+  <img src="img/audreyhall.jpg" class="d-block w-100" alt="Character 2">
+  <div class="carousel-caption d-none d-md-block">
+    <h5>Audrey Hall</h5>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#description2" aria-expanded="false" aria-controls="description2">
+      Open Description
+    </button>
+    <div class="collapse" id="description2">
+      <p>Audrey Hall is a Beyonder of the Visionary Pathway. She is one of the first members of the Tarot Club, codenamed Justice, and later joins the Psychology Alchemists. Her companion partner is Susie. She is a believer in the Evernight Goddess and has adopted the idea of equality for all people.</p>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item">
+  <img src="img/algerwilson.jpg" class="d-block w-100" alt="Character 3">
+  <div class="carousel-caption d-none d-md-block">
+    <h5>Alger Wilson</h5>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#description3" aria-expanded="false" aria-controls="description3">
+      Open Description
+    </button>
+    <div class="collapse" id="description3">
+      <p>Alger Wilson is a Beyonder of the Tyrant Pathway. The Captain of the Blue Avenger that once belonged to the Church of the Lord of Storms. He is one of the first members of the Tarot Club, codenamed The Hanged Man. He was the Pontiff to the Church of the Sea God, before he went on a journey to find the Western Continent. He known as a maritime king without the title of a Pirate King.</p>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item">
+  <img src="img/deriickberg.jpg" class="d-block w-100" alt="Character 4">
+  <div class="carousel-caption d-none d-md-block">
+    <h5>Derrick Berg</h5>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#description4" aria-expanded="false" aria-controls="description4">
+      Open Description
+    </button>
+    <div class="collapse" id="description4">
+      <p>Derrick Berg is a teenager that lives in the City of Silver which resides in the Forsaken Land of the Gods. Codename The Sun in the Tarot Club.
+
+He is a Beyonder of the Sun Pathway. He provides the club with historical records of the past epochs which are hard to find for peoples in the current era. He also provides the club with various Beyonder materials from monsters around the City of Silver which are difficult to procure elsewhere.
+
+He hoped to become sequence 0 of Sun Pathway, because in this way he can lead the City of Silver out of the Forsaken Land of the Gods, and restore sunlight, and in general normal lives, back to his people.</p>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item">
+  <img src="img/forswall.jpg" class="d-block w-100" alt="Character 5">
+  <div class="carousel-caption d-none d-md-block">
+    <h5>Fors Wall</h5>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#description5" aria-expanded="false" aria-controls="description5">
+      Open Description
+    </button>
+    <div class="collapse" id="description5">
+      <p>Fors Wall is a Beyonder of the Door Pathway. Codename The Magician in the Tarot Club. She is initially 23 years old, a bestselling novelist, and good friends with Xio Derecha. Later she becomes a disciple of Dorian Gray, a member of Abraham Family. She is lazy and sometimes postpones writing in order to enjoy herself.</p>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item">
+  <img src="img/emlynwhite.jpg" class="d-block w-100" alt="Character 6">
+  <div class="carousel-caption d-none d-md-block">
+    <h5>Emlyn White</h5>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#description6" aria-expanded="false" aria-controls="description6">
+      Open Description
+    </button>
+    <div class="collapse" id="description6">
+      <p>Emlyn White is a Sanguine Earl, a High-ranking Deacon in the Harvest Church, and a member of the Tarot Club with the Codename The Moon. He, as all Sanguines do, believes in the Moon, or Sanguine Ancestor Lilith. But after being brought to the Harvest Church by Utravsky, he is slowly transferring belief towards Earth Mother.</p>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item">
+  <img src="img/cattleya.jpg" class="d-block w-100" alt="Character 7">
+  <div class="carousel-caption d-none d-md-block">
+    <h5>Cattleya</h5>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#description7" aria-expanded="false" aria-controls="description7">
+      Open Description
+    </button>
+    <div class="collapse" id="description7">
+      <p>Cattleya is one of the 6 Pirate Kings and a Sequence 3 Beyonder of the Hermit Pathway. Her codename in the Tarot Club is The Hermit. She is one of the ten Pillars of the Moses Ascetic Order.
+
+She once held the nickname Admiral of Stars. Her flagship is named "The Future" and she is the captain of The Star Pirates. Her bounty originally is 37,000 pounds, after she permitted Gehrman Sparrow board the Future, her bounty raise to 45,000 pounds. By year 1352, Cattleya became the hidden Pirate Queen. After Mr. Fool had entered a deep sleep, she finally made up her mind and announced her advancement to the public and became a true Pirate Queen called Queen of Stars. In year 1358, her bounty raise to 11 millions verl d'or.</p>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item">
+  <img src="img/leonardmitchell.jpg" class="d-block w-100" alt="Character 8">
+  <div class="carousel-caption d-none d-md-block">
+    <h5>Leonard Mitchell</h5>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#description8" aria-expanded="false" aria-controls="description8">
+      Open Description
+    </button>
+    <div class="collapse" id="description8">
+      <p>Leonard Mitchell is a captain of the Red Gloves, a division under the Church of the Evernight Goddess, in Backlund diocese. Codename The Star in the Tarot Club.
+
+Originally a member of the Tingen City division of the Nighthawks, he has since joined the Red Gloves and managed to get revenge against Ince Zangwill for the deaths of Dunn Smith and Klein Moretti. After the war, he advanced further and became one of the High-ranking deacons in the Church of the Evernight Goddess.
+
+When not on missions around the Loen Kingdom, he usually stays in the capital, Backlund. He is currently housing an Error Pathway parasite, revealed to be Pallez Zoroast, an Angel of the Zoroast Family, who provides guidance to Leonard after losing most of "His" power.</p>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item">
+  <img src="img/xiodelecha.jpg" class="d-block w-100" alt="Character 9">
+  <div class="carousel-caption d-none d-md-block">
+    <h5>Xio Derecha</h5>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#description9" aria-expanded="false" aria-controls="description9">
+      Open Description
+    </button>
+    <div class="collapse" id="description9">
+      <p>Xio Derecha is from the Justiciar Pathway. She is a friend of Fors Wall. She is currently a member of the Tarot Club. Her codename is Judgment.</p>
+    </div>
+  </div>
+</div>
+   
+  </div>
+  <a class="carousel-control-prev" href="#characterCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#characterCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    `;
+}
+        
+        function showNovelArt() {
+        var content = document.getElementById('content');
+        content.className = 'content';
+        content.innerHTML = `
+            <h3>Novel Art</h3>
+            <div id="novelArtGrid">
+                <img src="img/novelart1.jpg" alt="Those who know nothing fear nothing, but those who don’t court death won’t die… In the future, I can’t just divine anything and everything. Who knows what I’ll see!" onclick="openModal(this)">
+                <img src="img/novelart2.jpg" alt="My past my present my future all of them are part of me" onclick="openModal(this)">
+                <img src="img/novelart3.jpg" alt="when i saw this i knew for sure this wasn't home" onclick="openModal(this)">
+                <img src="img/novelart4.jpg" alt="“Fate never repeats itself indefinitely. It always brings us some surprises.”" onclick="openModal(this)">
+                <img src="img/novelart5.jpg" alt="“Knowledge can change one’s destiny, and diligence will result in glory”" onclick="openModal(this)">
+                <img src="img/novelart6.jpg" alt="Maybe not linked by blood,but we still a familly" onclick="openModal(this)">
+                <img src="img/novelart7.jpg" alt="“The oldest and strongest emotion of mankind is fear, and the oldest and strongest fear is the fear of the unknown.”" onclick="openModal(this)">
+                <img src="img/novelart8.jpg" alt="Life is full of hard choices..." onclick="openModal(this)">
+                <img src="img/novelart9.jpg" alt="“For my dream. And… protect.”" onclick="openModal(this)">
+                <img src="img/novelart10.jpg" alt="“I have no idea what I am now. Maybe I’m just an evil spirit that has clawed its way back from hell to seek revenge…”" onclick="openModal(this)">
+                <img src="img/novelart11.jpg" alt="“This is really a crazy and chaotic world…”" onclick="openModal(this)">
+                <img src="img/novelart12.jpg" alt="“Death is not the end. You will be redeemed when you are at god’s side.”" onclick="openModal(this)">
+                <img src="img/novelart13.jpg" alt="“They feared me because of my power so they sealed me and all what i want is to have a peacefull life ”" onclick="openModal(this)">
+                <img src="img/novelart14.jpg" alt="I won't lose too much, just myself.
+   There are always other things that are more important than others
+                     - The Fool" onclick="openModal(this)">
+                <img src="img/novelart15.jpg" alt="“A price is always exacted for what fate bestows, isn’t it?”" onclick="openModal(this)">
+            </div>
+            <div id="myModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+        `;
+    }
+
+        function openModal(imgElement) {
+        var modal = document.getElementById('myModal');
+        var modalImg = document.getElementById('img01');
+        var captionText = document.getElementById('caption');
+
+        modal.style.display = "block";
+        modalImg.src = imgElement.src;
+        captionText.innerHTML = imgElement.alt;
+    }
+
+        function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    </script>
+</body>
+</html>

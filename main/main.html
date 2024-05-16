@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <title>kaelar's novel</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bellota:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div id="logo">
+                <img src="img/logo.png" alt="Logo">
+            </div>
+            <a href="#" onclick="showAboutUs(); scrollToSection('about-us')">About Us</a>
+            <a href="#" onclick="showNovels(); scrollToSection('novels')">Our Novels</a>
+            <a href="#" onclick="showRatingAndReview(); scrollToSection('rating-and-review')">Rating and Review</a>
+            <a href="#" id="nav-login" onclick="showLogin(); scrollToSection('login')">Login</a>
+            <a href="#" id="nav-signup" onclick="showSignup(); scrollToSection('signup')">Signup</a>
+            <span id="current-user"></span>
+            <div id="search-bar" class="search-bar">
+                <input type="text" id="search-input" placeholder="Search..." onkeyup="searchNovel()">
+            </div>
+        </nav>
+    </header>
+    <section id="about-us">
+
+    </section>
+    <section id="login">
+         
+    </section>
+    <section id="signup">
+   
+    </section>
+    <section id="novels">
+    </section>
+    <section id="rating-and-review">
+    </section>
+    <div id="submission-message"></div>
+    <script>
+      window.onload = function() {
+    showAboutUs();
+
+};
+        function scrollToSection(id) {
+            var element = document.getElementById(id);
+            element.scrollIntoView({behavior: "smooth"});
+        }
+        function showAboutUs() {
+        hideAllSections();
+        document.getElementById('about-us').style.display = 'block';
+    document.getElementById('about-us').innerHTML = '<h2 class="section-title">About Us</h2><p class="about-us-text" style="font-family: \'Bellota\', sans-serif; background-color: rgba(156, 149, 149, 0.5); border-radius: 25px;">Step into a realm where words weave magic and tales unfold like never before! Welcome to our enchanting world of novels, where each click opens a portal to adventure, mystery, and romance. Get ready to be spellbound by gripping plots, mesmerizing characters, and twists that will leave you breathless. From pulse-pounding thrillers to heartwarming sagas, our website is your passport to literary escape. Join us and let the stories ignite your imagination, as we journey together through the boundless realms of fiction. join a community of readers and of fellow bibliophiles at kaelars. Dive in now!</p>';
+    }
+    var novelData = [
+        { title: 'Solo', img: 'img/solocover.jpg', href: '../solo/solo.html', views: 1000, likes: 500 },
+        { title: 'ORV', img: 'img/orvcover.webp', href: '../orv/orv.html', views: 2000, likes: 1000 },
+        { title: 'LOTM', img: 'img/lotmcover.jpg', href: '../lotm/lotm.html', views: 3000, likes: 1500 }
+    ];
+
+        function showNovels() {
+            hideAllSections();
+            document.getElementById('novels').style.display = 'block';
+
+            var html = '<h2 class="section-title">Our Novels</h2>';
+            html += '<div id="novelCarousel" class="carousel slide" data-ride="carousel"><div class="carousel-inner">';
+
+            for (var i = 0; i < novelData.length; i++) {
+                html += '<div class="carousel-item' + (i === 0 ? ' active' : '') + '">';
+                html += '<img src="' + novelData[i].img + '" class="d-block w-100" alt="Novel Cover">';
+                html += '<div class="carousel-caption d-none d-md-block">';
+                html += '<h5>' + novelData[i].title + '</h5>';
+                html += '<p>Views: ' + novelData[i].views + ', Likes: ' + novelData[i].likes + '</p>';
+                html += '<button class="novel-button" onclick="location.href=\'' + novelData[i].href + '\'">Go to Novel</button>';
+                html += '</div></div>';
+            }
+
+            html += '</div><a class="carousel-control-prev" href="#novelCarousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#novelCarousel" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>';
+
+            document.getElementById('novels').innerHTML = html;
+        }
+
+        function searchNovel() {
+            var input = document.getElementById('search-input').value.toLowerCase();
+
+            if (input === '') {
+                showNovels();
+                return;
+            }
+
+            var html = '<h2 class="section-title">Search Results</h2>';
+            html += '<div class="novels-list">';
+
+            for (var i = 0; i < novelData.length; i++) {
+                var title = novelData[i].title.toLowerCase();
+                if (title.includes(input)) {
+                    html += '<div class="novel-item">';
+                    html += '<img src="' + novelData[i].img + '" class="novel-cover" alt="Novel Cover">';
+                    html += '<div class="novel-info">';
+                    html += '<h5>' + novelData[i].title + '</h5>';
+                    html += '<p>Views: ' + novelData[i].views + ', Likes: ' + novelData[i].likes + '</p>';
+                    html += '<button class="novel-button" onclick="location.href=\'' + novelData[i].href + '\'">Go to Novel</button>';
+                    html += '</div></div>';
+                }
+            }
+
+            html += '</div>';
+
+            document.getElementById('novels').innerHTML = html;
+        }
+
+        function showNovelInfo(views, likes) {
+            alert('Views: ' + views + ', Likes: ' + likes);
+        }
+
+        function showRatingAndReview() {
+            hideAllSections();
+            document.getElementById('rating-and-review').style.display = 'block';
+            var html = '<h2 class="section-title">Rating and Review</h2><div class="rating">';
+            for (var i = 1; i <= 5; i++) {
+                html += '<span class="star" onclick="setRating(' + i + ')">☆</span>';
+            }
+            html += '</div>';
+            html += '<div class="review">';
+            html += '<form id="review-form" onsubmit="submitReview(event)">';
+            html += '<textarea id="review-text" placeholder="Write your review here..."></textarea>';
+            html += '<button type="submit">Submit Review</button>';
+            html += '</form>';
+            html += '</div>';
+
+            document.getElementById('rating-and-review').innerHTML = html;
+        }
+
+        function setRating(ratingValue) {
+            const stars = document.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                star.textContent = index < ratingValue ? '★' : '☆';
+            });
+        }
+
+
+        function hideAllSections() {
+            document.getElementById('about-us').style.display = 'none';
+            document.getElementById('novels').style.display = 'none';
+            document.getElementById('rating-and-review').style.display = 'none';
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('signup').style.display = 'none';
+            document.getElementById('submission-message').style.display = 'none'; 
+
+    }
+
+        function submitReview(event) {
+            event.preventDefault(); 
+            var reviewText = document.getElementById('review-text').value;
+            var submissionMessage = document.getElementById('submission-message');
+            if (document.getElementById('rating-and-review').style.display === 'block') {
+                submissionMessage.textContent = 'Submitted review: ' + reviewText;
+                submissionMessage.style.display = 'block'; 
+            }
+            document.getElementById('review-text').value = '';
+            alert('Review submitted successfully!');
+    }
+        function showLogin() {
+            hideAllSections();
+            document.getElementById('login').style.display = 'block';
+            document.getElementById('login').innerHTML = '<h2 class="section-title">Login</h2><form id="login-form" onsubmit="submitLogin(event)"><input type="text" id="login-username" placeholder="Username"><input type="password" id="login-password" placeholder="Password"><button type="submit">Login</button></form>';
+        }
+
+        function showSignup() {
+            hideAllSections();
+            document.getElementById('signup').style.display = 'block';
+            document.getElementById('signup').innerHTML = '<h2 class="section-title">Signup</h2><form id="signup-form" onsubmit="submitSignup(event)"><input type="text" id="signup-username" placeholder="Username"><input type="password" id="signup-password" placeholder="Password"><button type="submit">Signup</button></form>';
+        }
+        function submitLogin(event) {
+            event.preventDefault();
+            var username = document.getElementById('login-username').value;
+            var password = document.getElementById('login-password').value;
+            var storedPassword = localStorage.getItem(username);
+            if (storedPassword === password) {
+                alert('Logged in as ' + username);
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('signup').style.display = 'none';
+                document.getElementById('nav-login').style.display = 'none'; 
+                document.getElementById('nav-signup').style.display = 'none'; 
+                document.getElementById('current-user').textContent = 'Logged in as ' + username; 
+            } else {
+                alert('Invalid username or password');
+            }
+        }
+
+        function submitSignup(event) {
+            event.preventDefault();
+            var username = document.getElementById('signup-username').value;
+            var password = document.getElementById('signup-password').value;
+            if (localStorage.getItem(username)) {
+                alert('Username already exists');
+            } else {
+                localStorage.setItem(username, password);
+                alert('Signed up as ' + username);
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('signup').style.display = 'none';
+                document.getElementById('nav-login').style.display = 'none'; 
+                document.getElementById('nav-signup').style.display = 'none'; 
+                document.getElementById('current-user').textContent = 'Logged in as ' + username; 
+            }
+        }
+
+
+    </script>
+</body>
+<footer class="footer">
+    <address>
+        Made by : Anas Mouqine & Assia Nouaeri<br>
+        Phone: +212672104126<br>
+        Email: <a href="mailto:anasmouqine@gmail.com">anasmouqine@gmail.com</a>
+    </address>
+</footer>
+</html>
