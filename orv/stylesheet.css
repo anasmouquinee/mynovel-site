@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellota&display=swap');
+@media screen and (max-width: 768px) {
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #0a5d94;
@@ -244,5 +246,4 @@ div p {
     padding: 10px 0;
     height: 150px;
 }
-@media screen and (max-width: 768px) {
 }
