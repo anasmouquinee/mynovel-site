@@ -292,7 +292,10 @@ div p {
     }
 
     pre {
-        font-size: 3vw;
+        font-size: 14px; 
+        overflow-x: auto; 
+        white-space: pre-wrap; 
+        word-wrap: break-word; 
     }
 
     #novelArtGrid {
@@ -308,7 +311,6 @@ div p {
         width: 90%;
     }
 
-    /* Add styles for all other elements here */
     .navbar a {
         font-size: 14px;
     }
