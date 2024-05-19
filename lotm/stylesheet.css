@@ -63,7 +63,8 @@ body {
 .content img {
     max-width: 100%;
     height: auto;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 10px;
 }
 .content p {
@@ -112,7 +113,8 @@ white-space: pre-wrap;
 word-wrap: break-word; 
 }
 .carousel-item img {
-object-fit: cover;
+-o-object-fit: cover;
+   object-fit: cover;
 height: 100%;
 width: 100%;
 }
@@ -131,7 +133,8 @@ width: 100%;
 .carousel-inner {
     width: auto;
     height: 300px; 
-    object-fit: cover; 
+    -o-object-fit: cover; 
+       object-fit: cover; 
 }
 .carousel-item {
 height: 500px; 
@@ -159,7 +162,8 @@ height: 500px;
 #novelArtGrid img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 .modal {
     display: none;
@@ -231,7 +235,8 @@ div p {
     width: 100%;
     height: auto;
     max-width: 100%;
-    object-fit: contain; 
+    -o-object-fit: contain;
+       object-fit: contain; 
 }
 #caption {
     margin: auto;
@@ -259,7 +264,8 @@ div p {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 #characterCarousel .carousel-caption {
@@ -282,4 +288,6 @@ pre#id  {
     word-wrap: break-word; 
     border: 1px solid; 
     border-radius: 10px; 
+}
+@media screen and (max-width: 1200px) {
 }
