@@ -299,7 +299,7 @@ div p {
     }
 
     #novelArtGrid {
-        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     }
 
     .chapter1, .chapter2, .chapter3 {
@@ -344,7 +344,7 @@ div p {
     }
 
     #orv-details {
-        font-size: 18px;
+        font-size: 16px;
         margin: 10px;
     }
 
@@ -364,4 +364,7 @@ div p {
         padding: 5px 0;
         height: 100px;
     }
+    .carousel-item.active {
+        width: 100%;
+    } 
 }
