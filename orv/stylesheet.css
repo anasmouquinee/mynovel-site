@@ -40,7 +40,8 @@ body {
 .content img {
     width: 200px;
     height: 200px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 10px;
 }
 .content p {
@@ -75,7 +76,8 @@ body {
 .carousel-inner {
     width: auto;
     height: 300px; 
-    object-fit: cover; 
+    -o-object-fit: cover; 
+       object-fit: cover; 
 }
 #summary1{
     background-color: rgba(255, 255, 255, 0.5); 
@@ -115,7 +117,8 @@ white-space: pre-wrap;
 word-wrap: break-word; 
 }
 .carousel-item img {
-object-fit: cover;
+-o-object-fit: cover;
+   object-fit: cover;
 height: 100%;
 width: 100%;
 }
@@ -145,7 +148,8 @@ height: 500px;
 #novelArtGrid img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 #orv-details {
     font-family: Arial, sans-serif;
@@ -227,7 +231,8 @@ div p {
     width: 100%;
     height: auto;
     max-width: 100%;
-    object-fit: contain; 
+    -o-object-fit: contain;
+       object-fit: contain; 
 }
 #caption {
     margin: auto;
@@ -238,4 +243,6 @@ div p {
     color: #ccc;
     padding: 10px 0;
     height: 150px;
+}
+@media screen and (max-width: 768px) {
 }
