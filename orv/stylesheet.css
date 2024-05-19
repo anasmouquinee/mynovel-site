@@ -269,3 +269,48 @@ div p {
     padding: 10px 0;
     height: 150px;
 }
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    .navbar {
+        padding: 5px 10px;
+    }
+
+    .content {
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .home-content, .character-content {
+        flex-direction: column;
+    }
+
+    .teaser video {
+        max-width: 100%;
+    }
+
+    pre {
+        font-size: 3vw;
+    }
+
+    #novelArtGrid {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    }
+    .chapter1, .chapter2, .chapter3 {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .modal-content {
+        width: 90%;
+    }
+
+    #caption {
+        width: 90%;
+    }
+
+    #myModal .modal-content {
+        width: 90%;
+    }
+}
