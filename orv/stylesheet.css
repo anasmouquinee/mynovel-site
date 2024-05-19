@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellota&display=swap');
-
-
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #0a5d94;
@@ -30,8 +28,6 @@ body {
     background-color:rgba(194, 194, 194, 0.4);
     border-radius: 10px;
 }
-@media screen and (max-width: 768px) {
-
 .content {
     max-width: 1200px;
     margin: 20px auto;
@@ -242,8 +238,4 @@ div p {
     color: #ccc;
     padding: 10px 0;
     height: 150px;
-<<<<<<< HEAD
-}
-=======
->>>>>>> parent of 819a9a3 (Update stylesheet.css)
 }
