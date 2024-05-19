@@ -298,19 +298,68 @@ div p {
     #novelArtGrid {
         grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
     }
+
     .chapter1, .chapter2, .chapter3 {
         font-size: 16px;
         padding: 10px;
     }
+
     .modal-content {
         width: 90%;
     }
 
-    #caption {
-        width: 90%;
+    /* Add styles for all other elements here */
+    .navbar a {
+        font-size: 14px;
     }
 
-    #myModal .modal-content {
-        width: 90%;
+    .content img {
+        width: 100%;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .character-content div {
+        margin: 5px;
+    }
+
+    .character-content img {
+        width: 100%;
+    }
+
+    .carousel div {
+        margin: 5px;
+    }
+
+    .carousel img {
+        width: 100%;
+    }
+
+    #summary1 {
+        padding: 10px;
+    }
+
+    #orv-details {
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    #content h3 {
+        padding: 5px;
+    }
+
+    .nav-item {
+        margin: 2px;
+    }
+
+    div p {
+        padding: 5px;
+    }
+
+    #caption {
+        padding: 5px 0;
+        height: 100px;
     }
 }
